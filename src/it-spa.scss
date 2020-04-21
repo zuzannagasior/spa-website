@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: #E8E4E5;
+    color: #1A1717;
+    font-size: 16px;
+  }
+
+  nav {
+    background: rgba(232, 227, 228, 0.6);
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    .logo {
+        // color: white;
+        font-size: 2.4rem;
+        padding: 1rem 0.5rem;
+        flex-grow: 1;
+        font-family: 'Cinzel', serif;
+    }
+    .cartIcon {
+        font-size: 2rem;
+        padding: 1rem 0.5rem;
+        margin-top: 0.4rem;
+    }
+    .toggle {
+        font-size: 2rem;
+        padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+        margin-left: 1.5rem;
+        margin-top: 0.4rem;
+        text-align: right;
+        display: none;
+        cursor: pointer;
+        @media (max-width: 768px) {
+            display: block;
+          }
+    }
+    .closeIcon {
+        @media (max-width: 768px) {
+            display: none;
+          }
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        margin-bottom: 0;
+        li {    
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 1rem 2rem;
+            white-space: nowrap;
+            a {
+                color: #1A1717;
+                display: block;
+                line-height: 100%;
+                text-decoration: none;
+                padding-bottom: 0.2rem;
+                margin-top: 0.8rem;
+                cursor: pointer;
+                border-bottom: 1.5px solid transparent;
+                &:hover {
+                    text-decoration: none;
+                    border-color:rgba(73, 89, 83, 0.6);
+                    transition: 0.2s;
+                    color: #495953;
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            flex-basis: 100%;
+            order: 2;
+            display: none;
+          }
+      }
+      .active {
+        display: flex;
+        }
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+  }
+
+//   Home Component
+
+#home-heading {
+    background: url(assets/img/home-heading.jpg) no-repeat center center fixed;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+}

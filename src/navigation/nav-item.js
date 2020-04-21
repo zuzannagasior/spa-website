@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
 export const navItem = (route) => {
-    const li = $(`<li class="nav-item"></li>`);
-    const a = $(`<a class="nav-link text-light">${route.name}</a>`);
+    const li = $(`<li class="menuItem"></li>`);
+    const a = $(`<a>${route.name}</a>`);
 
     a.on('click', (event) => {
         event.preventDefault();

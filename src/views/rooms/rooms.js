@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'babel-polyfill';
 import { API_URL } from '../../config/httpConfig';
 import { room } from './room';
-import { headingSection } from './headingSection';
+import { headingSection } from './heading-section';
 
 const getRoomsData = async () => {
     let response = await fetch(`${API_URL}/rooms`);

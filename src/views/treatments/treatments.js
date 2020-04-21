@@ -8,10 +8,10 @@ import {
 } from './treatment';
 import {
     headingSection
-} from './headingSection';
+} from './heading-section';
 import {
     filterSection
-} from './filterSection';
+} from './filter-section';
 
 const getTreatmentsData = async (area = "all") => {
     const areaParameter = area !== "all" ? `?area=${area}` : "";
