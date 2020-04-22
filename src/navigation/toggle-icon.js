@@ -16,7 +16,7 @@ const toggleMenu = () => {
     }
 };
 
-export const toggleIcon = () => {
+export const createToggleIcon = () => {
     const toggleIcon = $('<span class="toggle"></span>').append(menuIcon);
 
     toggleIcon.on('click', () => {

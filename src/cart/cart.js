@@ -1,4 +1,4 @@
-//cart.js
+import $ from 'jquery';
 
 export class Cart {
 
@@ -52,6 +52,15 @@ export class Cart {
         if(itemInCart !== -1) {
             cartValue.splice(itemInCart, 1);
             this.setItSpaCart(cartValue);
+        }
+    }
+
+    showCartSum(action) {
+        const cartSum = $('.cartSum');
+        if (action === 'show') {
+            cartSum.addClass("showCart");
+        } else {
+            cartSum.removeClass("showCart");
         }
     }
 }

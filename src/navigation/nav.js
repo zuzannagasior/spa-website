@@ -1,11 +1,15 @@
 import $ from 'jquery';
 import { routes } from '../router/routes';
 import { navItem } from './nav-item';
-import { cartIcon } from '../assets/icons/cartIcon'
 import {
-    toggleIcon
+    createToggleIcon
 } from './toggle-icon';
-
+import {
+    createCartIcon
+} from './cart-icon';
+import {
+    createCartSum
+} from '../cart/cart-sum';
 
 export const nav = () => {
     const fragment = $(new DocumentFragment());
@@ -15,14 +19,15 @@ export const nav = () => {
     let navBarItems = routes.map(route => {
         return navItem(route);
     });
-    const navCartIcon = $('<span class="cartIcon"></span>').prepend(cartIcon);
-    const navMenuIcon = toggleIcon();
+    const navCartIcon = createCartIcon();
+    const navMenuIcon = createToggleIcon();
     
     navBar.prepend(navLogo);
     navBar.find('ul').append(navBarItems);
     navBar.append(navCartIcon).append(navMenuIcon);
+    const cartSum = createCartSum();
 
-    fragment.append(navBar);
+    fragment.append(navBar).append(cartSum);
 
     return fragment;
 }

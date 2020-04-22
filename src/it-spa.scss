@@ -16,20 +16,21 @@
 
   nav {
     background: rgba(232, 227, 228, 0.6);
-    padding: 0.5rem 1.5rem;
+    padding: 0 1.5rem;
     display: flex;
     width: 100%;
     position: fixed;
     .logo {
         // color: white;
         font-size: 2.4rem;
-        padding: 1rem 0.5rem;
+        font-weight: bold;
+        padding: 1.5rem 0.5rem;
         flex-grow: 1;
         font-family: 'Cinzel', serif;
     }
     .cartIcon {
         font-size: 2rem;
-        padding: 1rem 0.5rem;
+        padding: 1.5rem 0.5rem;
         margin-top: 0.4rem;
     }
     .toggle {
@@ -49,7 +50,7 @@
             display: none;
           }
     }
-    ul {
+    .menu {
         list-style-type: none;
         display: flex;
         margin-bottom: 0;
@@ -57,7 +58,7 @@
             font-size: 1.6rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             white-space: nowrap;
             a {
                 color: #1A1717;
@@ -91,6 +92,63 @@
         flex-wrap: wrap;
         justify-content: center;
       }
+  }
+  .cartSum {
+    width: 30rem;
+    background-color: rgba(232, 227, 228, 0.6);
+    position: fixed;
+    margin-top: 6.4rem;
+    right: 0;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid rgba(73, 89, 83, 0.6);
+    border-bottom: 2px solid rgba(73, 89, 83, 0.6);
+    @media (max-width: 768px) {
+      width: 20rem;
+    }
+    p {
+      margin-top: 1rem;
+    }
+    section {
+      width: 100%;
+      text-align: left;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      ul {
+        list-style-type: none;
+        li {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  .showCart {
+    display: flex;
+  }
+
+  .customButton {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+    background-color: transparent;
+
+    border: 1.5px solid rgba(73, 89, 83, 0.6);
+    &:hover {
+      background-color: rgba(232, 227, 228, 0.6);
+      transition: 0.2s;
+    }
+    &:focus {
+      outline: 2px solid rgba(73, 89, 83, 0.4);
+      transition: 0.2s;
+    }
+
+
   }
 
 //   Home Component
