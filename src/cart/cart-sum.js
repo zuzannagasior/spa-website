@@ -12,21 +12,22 @@ export const createCartSum = () => {
     console.log('cart.getItSpaCart().length', cart.getItSpaCart().length);
 
     if (cart.getItSpaCart().length > 0) {
-        cartSumContent.append($(`    <section><p><b>Pokoje</b></p>
-        <ul>
-            <li>Pokój binarny<span>x1</span></li>
-            <li>Pokój czteroosobowy<span>x2</span></li>
-        </ul>
-        <p><b>Zabiegi</b></p>
-        <ul>
-            <li>Masaż<span>x1</span></li>
-            <li>Peeling<span>x2</span></li>
-        </ul>
-        </section>
+        const items = cart.getItSpaCart();
+        cartSumContent.append($(`    
+        <section></section>
         <button class="customButton">Przejdź do koszyka</button>`));
-        
+
+        const roomsListLabel = $(`<p><b>Pokoje</b></p>`)
+        const roomsListWrap = $(`<ul></ul>`);
+        const roomsList = items.map(item => {
+            console.log('item', item);
+            return $(`<li>${item.name}</li>`);
+        })
+        roomsListWrap.prepend(roomsList);
+        cartSumContent.find('section').prepend(roomsListWrap).prepend(roomsListLabel);
+
         cartSumContent.find('button').on('click', () => {
-            all.find('button').trigger('routechange', { path: '/bookings' });
+            cartSumContent.find('button').trigger('routechange', { path: '/bookings' });
             cart.showCartSum('hide');
         });
     } else {

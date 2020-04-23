@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'babel-polyfill';
 import { API_URL } from '../../config/httpConfig';
-import { room } from './room';
+import { roomsList } from './rooms-list';
 import { headingSection } from './heading-section';
 
 const getRoomsData = async () => {
@@ -23,11 +23,9 @@ export const rooms = async () => {
         });
 
     const headingSectionToDisplay = headingSection();
+    const roomsListSectionToDisplay = roomsList(availableRooms);
 
-    const availableRoomsToDisplay = availableRooms.map(roomData => {
-        return room(roomData);
-    });
-    fragment.append(headingSectionToDisplay).append(availableRoomsToDisplay);
+    fragment.append(headingSectionToDisplay).append(roomsListSectionToDisplay);
 
     return fragment;
 };

@@ -9,7 +9,7 @@
 
   body {
     font-family: 'Raleway', sans-serif;
-    background: #E8E4E5;
+    background: #e8e3e4;
     color: #1A1717;
     font-size: 16px;
   }
@@ -132,15 +132,16 @@
 
   .customButton {
     height: 4rem;
+    min-width: 18rem;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 0.5rem;
     background-color: transparent;
-
     border: 1.5px solid rgba(73, 89, 83, 0.6);
     &:hover {
-      background-color: rgba(232, 227, 228, 0.6);
+      background-color: rgba(73, 89, 83, 0.6);
+      color: rgb(232, 227, 228);
       transition: 0.2s;
     }
     &:focus {
@@ -153,9 +154,135 @@
 
 //   Home Component
 
-#home-heading {
+#homeHeading {
     background: url(assets/img/home-heading.jpg) no-repeat center center fixed;
     height: 100vh;
     width: 100%;
     background-size: cover;
 }
+
+//   Rooms Component
+
+#roomsHeading {
+  background: url(assets/img/rooms-heading.jpg) no-repeat center center fixed;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+#roomsList {
+  .roomsListIntro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 10rem;
+    @media (max-width: 768px) {
+      margin: 5rem 5rem;
+    }
+    @media (max-width: 480px) {
+      margin: 2rem 2rem;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+#roomsListCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 10rem;
+  .roomItemBox {
+    height: 32rem;
+    width: 100%;
+    border: 1.5px solid rgba(73, 89, 83, 0.6);
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: stretch;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: center;
+      flex-basis: 100%;
+    }
+    .imgBox {
+      min-width: 40rem;
+      height: auto;
+      background-color: #495953;
+      img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover;
+      }
+      @media (max-width: 768px) {
+        height: 24rem;
+        min-width: 100%;
+      }
+      @media (max-width: 1024px) {
+        width: 100%;
+        height: 32rem;
+      }
+    }
+    .roomItemCont {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1.6rem 1.6rem;
+      h2 {
+        font-family: 'Cinzel', serif;
+        // font-weight: bold;
+        font-style: italic;
+
+      }
+      p {
+        flex-grow: 1;
+      }
+      span {
+        margin-right: 1rem;
+        svg {
+          transform: translateY(0.4rem);
+        }
+     
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          font-size: 2.4rem;
+          margin-left: 1.6rem;
+          font-style: italic;
+          @media (max-width: 480px) {
+            margin-bottom: 0.8rem;
+          }
+        }
+        @media (max-width: 480px) {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+  
+    }
+  }
+  @media (max-width: 768px) {
+    margin: 5rem 5rem;
+  }
+  @media (max-width: 480px) {
+    margin: 2rem 2rem;
+  }
+}
+
+//   Treatment Component
+
+#treatmentHeading {
+  background: url(assets/img/treatment-heading.jpg) no-repeat center center fixed;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+

@@ -6,28 +6,32 @@
       "name": "Pokój unarny",
       "beds": 1,
       "guests": 1,
-      "price": 170
+      "price": 170,
+      "photoSrc": "https://www.example.com/images/dinosaur.jpg"
     },
     {
       "id": 2,
       "name": "Pokój binarny",
       "beds": 1,
       "guests": 2,
-      "price": 240
+      "price": 240,
+      "photoSrc": "assets/img/room-2.jpg"
     },
     {
       "id": 3,
       "name": "Pokój trójkowy",
       "beds": 2,
       "guests": 3,
-      "price": 290
+      "price": 290,
+      "photoSrc": "assets/img/room-3.jpg"
     },
     {
       "id": 4,
       "name": "Pokój czwórkowy",
       "beds": 2,
       "guests": 4,
-      "price": 340
+      "price": 340,
+      "photoSrc": "assets/img/room-4.jpg"
     }
   ],
   "treatments": [

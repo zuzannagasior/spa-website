@@ -1,4 +1,7 @@
 import $ from 'jquery';
+import {
+    createCartSum
+} from '../cart/cart-sum';
 
 export class Cart {
 
@@ -38,10 +41,10 @@ export class Cart {
     // zakładając, że koszyk jest tablicą
     add(item) {
         // dodaje produkt do koszyka
+        console.log('item', item);
         const cartValue = this.getItSpaCart();
         this.setItSpaCart([...cartValue, item]); //cartValue.concat(item)
-
-
+        this.updateCartSum();
     }
 
     remove(item) {
@@ -62,5 +65,11 @@ export class Cart {
         } else {
             cartSum.removeClass("showCart");
         }
+    }
+
+    updateCartSum() {
+        const cartSum = createCartSum();
+        $('.cartSum').remove();
+        $('nav').append(cartSum);
     }
 }
