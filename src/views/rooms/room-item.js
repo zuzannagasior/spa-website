@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import { bedIcon } from '../../assets/icons/bedIcon';
 import { peopleIcon } from '../../assets/icons/peopleIcon';
-import room1 from '../../assets/img/room-1.jpg';
 import {
     Cart
 } from '../../cart/cart';
@@ -11,7 +10,7 @@ export const roomItem = (data) => {
     const fragment = $(new DocumentFragment());
     const cart = new Cart();
     const roomItemBox = $(`<div class="roomItemBox"></div>`);
-    const roomItemImg = $(`<div class="imgBox"><img src="${room1}" alt=""></img></div>`);
+    const roomItemImg = $(`<div class="imgBox"><img src="${data.photoUrl}" alt=""></img></div>`);
 
     const roomItemCont = $(`<div class="roomItemCont">
                                 <h2>${data.name}</h2>

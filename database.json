@@ -7,7 +7,7 @@
       "beds": 1,
       "guests": 1,
       "price": 170,
-      "photoSrc": "https://www.example.com/images/dinosaur.jpg"
+      "photoUrl": "https://images.unsplash.com/photo-1544097935-e6d136448533?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     },
     {
       "id": 2,
@@ -15,7 +15,7 @@
       "beds": 1,
       "guests": 2,
       "price": 240,
-      "photoSrc": "assets/img/room-2.jpg"
+      "photoUrl": "https://images.unsplash.com/photo-1559841644-08984562005a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
     },
     {
       "id": 3,
@@ -23,7 +23,7 @@
       "beds": 2,
       "guests": 3,
       "price": 290,
-      "photoSrc": "assets/img/room-3.jpg"
+      "photoUrl": "https://images.unsplash.com/photo-1573830326465-7b0c5caf477b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
     },
     {
       "id": 4,
@@ -31,7 +31,7 @@
       "beds": 2,
       "guests": 4,
       "price": 340,
-      "photoSrc": "assets/img/room-4.jpg"
+      "photoUrl": "https://images.unsplash.com/photo-1508253578933-20b529302151?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1215&q=80"
     }
   ],
   "treatments": [
@@ -40,49 +40,57 @@
       "name": "Masaż rozgrzanym monitorem",
       "area": "back",
       "time": 30,
-      "price": 80
+      "price": 80,
+      "photoUrl": "https://cdn.pixabay.com/photo/2016/11/29/11/52/coder-1869306_1280.jpg"
     },
     {
       "id": 2,
       "name": "Biczowanie kablem od myszy",
       "area": "back",
       "time": 20,
-      "price": 70
+      "price": 70,
+      "photoUrl": "https://images.unsplash.com/photo-1559751853-889b598768b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=862&q=80"
+
     },
     {
       "id": 3,
       "name": "Peeling odłamkami płyty CD",
       "area": "face",
       "time": 15,
-      "price": 50
+      "price": 50,
+      "photoUrl": "https://images.unsplash.com/photo-1529443601747-2d02ab3da2c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1048&q=80"
     },
     {
       "id": 4,
       "name": "Pedicure woskiem z USB",
       "area": "legs",
       "time": 25,
-      "price": 100
+      "price": 100,
+      "photoUrl": "https://images.unsplash.com/photo-1572721546624-05bf65ad7679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80"
     },
     {
       "id": 5,
       "name": "Manicure analogowo-cyfrowy",
       "area": "hands",
       "time": 45,
-      "price": 150
+      "price": 150,
+      "photoUrl": "https://images.unsplash.com/photo-1529245856630-f4853233d2ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     },
     {
       "id": 6,
       "name": "Kąpiel w gorącej kawie",
       "area": "body",
       "time": 60,
-      "price": 200
+      "price": 200,
+      "photoUrl": "https://images.unsplash.com/photo-1557854944-b3068916305e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80"
     },
     {
       "id": 7,
       "name": "Depilacja dyskiem twardym",
       "area": "body",
       "time": 45,
-      "price": 120
+      "price": 120,
+      "photoUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
     }
   ]
 }

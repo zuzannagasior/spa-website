@@ -227,6 +227,9 @@
         width: 100%;
         height: 32rem;
       }
+      @media (min-width: 1024px) {
+        width: 40rem;
+      }
     }
     .roomItemCont {
       display: flex;
@@ -286,3 +289,155 @@
   background-size: cover;
 }
 
+#treatmentsList {
+  .treatmentsListIntro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 10rem;
+    @media (max-width: 768px) {
+      margin: 5rem 5rem;
+    }
+    @media (max-width: 480px) {
+      margin: 2rem 2rem;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 8rem;
+  button {
+    border-top: none;
+    border-bottom: none;
+    min-width: 12rem;
+    height: 3rem;
+  }
+  
+}
+
+#treatmentsListCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 5rem 10rem;
+  .treatmentItemBox {
+    width: 30rem;
+    border: 1.5px solid rgba(73, 89, 83, 0.6);
+    margin: 0 0.8rem 1.6rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    &::after {
+      content: '';
+      flex: auto;
+    }
+    .imgBox {
+      width: 100%;
+      height: 24rem;
+      position: relative;
+      button {
+        display: none;
+        position: absolute;
+        bottom: 2.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover;
+        z-index: -1;
+        position: absolute;
+      }
+    }
+    .showHover{
+      background-color: rgba(232, 227, 228, 0.6);
+      transition: 0.2s;
+    }
+    .showHover button{
+      display: block;
+      transition: 0.2s;
+    }
+    .treatmentItemCont {
+      display: flex;
+      flex-direction: column;
+      // flex-grow: 1;
+      padding: 1.6rem 1.6rem;
+      h2 {
+        font-family: 'Cinzel', serif;
+        // font-weight: bold;
+        font-style: italic;
+
+      }
+      p {
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        white-space: nowrap;
+      }
+      .showMore {
+        text-overflow: initial;
+        overflow: visible; 
+        white-space: normal;
+      }
+      span {
+        margin-right: 1rem;
+        svg {
+          transform: translateY(0.4rem);
+        }
+     
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          font-size: 2.4rem;
+          margin-left: 1.6rem;
+          font-style: italic;
+        }
+        button {
+          background-color: transparent;
+          color: rgb(73, 89, 83);
+          border: none;
+          svg {
+            transform: translateY(0.4rem);
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+  
+    }
+  }
+  @media (max-width: 768px) {
+    margin: 5rem 5rem;
+  }
+  @media (max-width: 480px) {
+    margin: 2rem 2rem;
+  }
+}
+
+
+
+#footer {
+  text-align: center;
+  border-top: 1.5px solid rgba(73, 89, 83, 0.6);
+  padding: 1.6rem;
+  color: #777777;
+}

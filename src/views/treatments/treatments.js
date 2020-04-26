@@ -4,14 +4,10 @@ import {
 } from '../../config/httpConfig';
 import 'babel-polyfill';
 import {
-    treatment
-} from './treatment';
-import {
     headingSection
 } from './heading-section';
-import {
-    filterSection
-} from './filter-section';
+import { treatmentsList } from './treatments-list';
+import { treatmentItem } from './treatment-item';
 
 const getTreatmentsData = async (area = "all") => {
     const areaParameter = area !== "all" ? `?area=${area}` : "";
@@ -22,7 +18,6 @@ const getTreatmentsData = async (area = "all") => {
 }
 
 export const filterByArea = async (area) => {
-    console.log('area', area);
     let availableTreatments;
 
     await getTreatmentsData(area)
@@ -35,10 +30,10 @@ export const filterByArea = async (area) => {
         });
 
     const availableTreatmentsToDisplay = availableTreatments.map(treatmentData => {
-        return treatment(treatmentData);
+        return treatmentItem(treatmentData);
     });
-    
-    $('#treatments').empty().prepend(availableTreatmentsToDisplay);
+
+    $('#treatmentsListCont').empty().prepend(availableTreatmentsToDisplay);
 };
 
 export const treatments = async () => {
@@ -54,13 +49,9 @@ export const treatments = async () => {
         });
 
     const headingSectionToDisplay = headingSection();
-    const filterSectionToDisplay = filterSection();
-    let availableTreatmentsSectionToDisplay = $(`<section id="treatments"></section>`);
-    const availableTreatmentsToDisplay = availableTreatments.map(treatmentData => {
-        return treatment(treatmentData);
-    });
-    availableTreatmentsSectionToDisplay.prepend(availableTreatmentsToDisplay);
-    fragment.append(headingSectionToDisplay).append(filterSectionToDisplay).append(availableTreatmentsSectionToDisplay);
+    const treatmentsListSectionToDisplay = treatmentsList(availableTreatments);
+
+    fragment.append(headingSectionToDisplay).append(treatmentsListSectionToDisplay);
 
     return fragment;
 };
