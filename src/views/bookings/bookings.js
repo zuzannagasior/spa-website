@@ -1,12 +1,12 @@
 import $ from 'jquery';
+import { cartListSection } from './cart-list-section';
 
 export const bookings = () => {
     const fragment = $(new DocumentFragment());
 
-    const h1 = $('<h1>Bookings</h1>');
-    const p = $('<p>Lorem ipsum...</p>');
+    const cartListSectionToDisplay = cartListSection();
 
-    fragment.append(h1).append(p);
+    fragment.append(cartListSectionToDisplay);
 
     return fragment;
 };

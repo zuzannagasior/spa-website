@@ -8,30 +8,32 @@ export const createCartSum = () => {
     const cartSumBox = $('<div class="cartSum"></div>');
     const cart = new Cart();
     const cartSumContent = $(new DocumentFragment());
-    console.log('cart.getItSpaCart()', cart.getItSpaCart());
-    console.log('cart.getItSpaCart().length', cart.getItSpaCart().length);
 
     if (cart.getItSpaCart().length > 0) {
-        const items = cart.getItSpaCart();
+        let cartData = new Array();
+        cart.getItSpaCart().forEach(item => {
+            if (!cartData.find(c => c.name === item.name)) {
+                cartData.push(item);
+            }
+        });
+
         cartSumContent.append($(`    
         <section></section>
         <button class="customButton">Przejdź do koszyka</button>`));
 
-        const roomsListLabel = $(`<p><b>Pokoje</b></p>`)
         const roomsListWrap = $(`<ul></ul>`);
-        const roomsList = items.map(item => {
+        const roomsList = cartData.map(item => {
             console.log('item', item);
-            return $(`<li>${item.name}</li>`);
+            const numberOfItems = cart.getNumberOfItems(item.name);
+            return $(`<li><b>${item.name}</b> <div><span>${numberOfItems}x</span><span>${item.price},00 zł</span></div></li>`);
         })
+        const sum = $(`<p>Suma: <b>${cart.getCartSum()},00 zł</b></p>`);
         roomsListWrap.prepend(roomsList);
-        cartSumContent.find('section').prepend(roomsListWrap).prepend(roomsListLabel);
+        cartSumContent.find('section').prepend(sum).prepend(roomsListWrap);
 
-        cartSumContent.find('button').on('click', () => {
-            cartSumContent.find('button').trigger('routechange', { path: '/bookings' });
-            cart.showCartSum('hide');
-        });
+        console.log(cartSumContent, 'cartSumContent');
+
     } else {
-        console.log('jestem hej')
         cartSumContent.append($('<p>Twój koszyk jest pusty.</p>'));
     }
 
@@ -41,6 +43,13 @@ export const createCartSum = () => {
     });
 
     cartSumBox.prepend(cartSumContent);
+
+    
+    cartSumBox.find('button').on('click', () => {
+        console.log("cartSumContent.find('button')", cartSumContent.find('button'));
+        cartSumBox.find('button').trigger('routechange', { path: '/bookings' });
+        cart.showCartSum('hide');
+    });
     fragment.append(cartSumBox);
 
     return fragment;

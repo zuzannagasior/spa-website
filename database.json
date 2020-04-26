@@ -2,7 +2,7 @@
   "users": [],
   "rooms": [
     {
-      "id": 1,
+      "id": "r_1",
       "name": "Pokój unarny",
       "beds": 1,
       "guests": 1,
@@ -10,7 +10,7 @@
       "photoUrl": "https://images.unsplash.com/photo-1544097935-e6d136448533?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     },
     {
-      "id": 2,
+      "id": "r_2",
       "name": "Pokój binarny",
       "beds": 1,
       "guests": 2,
@@ -18,7 +18,7 @@
       "photoUrl": "https://images.unsplash.com/photo-1559841644-08984562005a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
     },
     {
-      "id": 3,
+      "id": "r_3",
       "name": "Pokój trójkowy",
       "beds": 2,
       "guests": 3,
@@ -26,7 +26,7 @@
       "photoUrl": "https://images.unsplash.com/photo-1573830326465-7b0c5caf477b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
     },
     {
-      "id": 4,
+      "id": "r_4",
       "name": "Pokój czwórkowy",
       "beds": 2,
       "guests": 4,
@@ -36,7 +36,7 @@
   ],
   "treatments": [
     {
-      "id": 1,
+      "id": "t_1",
       "name": "Masaż rozgrzanym monitorem",
       "area": "back",
       "time": 30,
@@ -44,7 +44,7 @@
       "photoUrl": "https://cdn.pixabay.com/photo/2016/11/29/11/52/coder-1869306_1280.jpg"
     },
     {
-      "id": 2,
+      "id": "t_2",
       "name": "Biczowanie kablem od myszy",
       "area": "back",
       "time": 20,
@@ -53,7 +53,7 @@
 
     },
     {
-      "id": 3,
+      "id": "t_3",
       "name": "Peeling odłamkami płyty CD",
       "area": "face",
       "time": 15,
@@ -61,7 +61,7 @@
       "photoUrl": "https://images.unsplash.com/photo-1529443601747-2d02ab3da2c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1048&q=80"
     },
     {
-      "id": 4,
+      "id": "t_4",
       "name": "Pedicure woskiem z USB",
       "area": "legs",
       "time": 25,
@@ -69,7 +69,7 @@
       "photoUrl": "https://images.unsplash.com/photo-1572721546624-05bf65ad7679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=966&q=80"
     },
     {
-      "id": 5,
+      "id": "t_5",
       "name": "Manicure analogowo-cyfrowy",
       "area": "hands",
       "time": 45,
@@ -77,7 +77,7 @@
       "photoUrl": "https://images.unsplash.com/photo-1529245856630-f4853233d2ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     },
     {
-      "id": 6,
+      "id": "t_6",
       "name": "Kąpiel w gorącej kawie",
       "area": "body",
       "time": 60,
@@ -85,7 +85,7 @@
       "photoUrl": "https://images.unsplash.com/photo-1557854944-b3068916305e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80"
     },
     {
-      "id": 7,
+      "id": "t_7",
       "name": "Depilacja dyskiem twardym",
       "area": "body",
       "time": 45,

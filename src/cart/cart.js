@@ -56,6 +56,16 @@ export class Cart {
             cartValue.splice(itemInCart, 1);
             this.setItSpaCart(cartValue);
         }
+        this.updateCartSum();
+    }
+
+    delete(item) {
+        // usuwa wszystkie produkty tego rodzaju z koszyka
+        const cartValue = this.getItSpaCart();
+        const cartValueFiltered = cartValue.filter(cartItem => cartItem.name !== item.name);
+        
+        this.setItSpaCart(cartValueFiltered);
+        this.updateCartSum();
     }
 
     showCartSum(action) {
@@ -71,5 +81,18 @@ export class Cart {
         const cartSum = createCartSum();
         $('.cartSum').remove();
         $('nav').append(cartSum);
+    }
+
+    getNumberOfItems(name) {
+        const filteredCart = this.getItSpaCart().filter(item => item.name === name);
+        return filteredCart.length;
+    }
+
+    getCartSum() {
+        let sum = 0;
+        this.getItSpaCart().forEach(item => {
+            sum = sum + item.price;
+        });
+        return sum;
     }
 }
