@@ -4,6 +4,7 @@ import { peopleIcon } from '../../assets/icons/peopleIcon';
 import {
     Cart
 } from '../../cart/cart';
+import { infoModal } from '../../modals/info-modal'
 
 
 export const roomItem = (data) => {
@@ -23,8 +24,10 @@ export const roomItem = (data) => {
                                 </footer>
                             </div>`);
     roomItemCont.find('button').on('click', () => {
-                                cart.add(data);
-                            });
+        cart.add(data);
+        $(document.body).append(infoModal(data));
+    });
+
 
     roomItemBox.prepend(roomItemCont).prepend(roomItemImg);
     fragment.append(roomItemBox);

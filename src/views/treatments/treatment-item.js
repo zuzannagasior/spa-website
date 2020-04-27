@@ -3,6 +3,7 @@ import {
     Cart
 } from '../../cart/cart';
 import { areas } from '../../config/treatmentAreas';
+import { infoModal } from '../../modals/info-modal'
 import { timeIcon, personIcon, arrowDownIcon, arrowUpIcon } from '../../assets/icons/index';
 
 const showMore = (id) => {
@@ -46,6 +47,7 @@ export const treatmentItem = (data) => {
                                 </div>`);
     treatmentItemCont.find('button.addToCartBtn').on('click', () => {
         cart.add(data);
+        $(document.body).append(infoModal(data));
     });
     treatmentItemCont.find('button.showMoreBtn').on('click', () => {
         showMore(data.id);
