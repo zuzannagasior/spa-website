@@ -3,6 +3,7 @@ import {
     Cart
 } from '../../cart/cart';
 import { cartItem } from './cart-item';
+import { datePickerSection } from './date-picker-section';
 
 export const cartListSection = () => {
     const cart = new Cart();
@@ -29,10 +30,14 @@ export const cartListSection = () => {
         return cartItem(item);
     });
 
+    const datePickerH = $('<h3><b>Wybierz datę pobytu</b></h3>');
+    const datePicker = datePickerSection();
+
     const sum = $(`<div class="summary"><span>Suma: <b><span class="sum">${cart.getCartSum()}</span>,00 zł</b></span>
                         <button class="customButton">Przejdź do podsumowania</button>
                     </div>`);
 
-    cartListBox.prepend(sum).prepend(treatmentsListToDisplay).prepend(treatment).prepend(roomsListToDisplay).prepend(rooms).prepend(heading);
+    cartListBox.prepend(sum).prepend(treatmentsListToDisplay).prepend(treatment)
+    .prepend(roomsListToDisplay).prepend(rooms).prepend(datePicker).prepend(datePickerH).prepend(heading);
     return cartListBox;
 };

@@ -16,10 +16,10 @@ const createCartItemCont = (data) => {
                     ${data.name}
                 </div>
                 <div class="second">
-                    ${data.price},00 zł 
-                    <span class="amount">${numberOfItems}</span>
                     <button id="add">+</button>
+                    <span class="amount">${numberOfItems}</span>
                     <button id="remove">-</button>
+                    ${data.price},00 zł 
                 </div>`);
 
     cartItemCont.find('button#remove').attr('disabled', numberOfItems === 1);

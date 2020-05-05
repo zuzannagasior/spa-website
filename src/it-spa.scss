@@ -164,6 +164,19 @@
 
   }
 
+  .customInput {
+    background-color: transparent;
+    border: 1px solid #1A1717;
+    width: 15rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    &:focus {
+      outline: none;
+      box-shadow: inset 0 1px 1px rgba(73, 89, 83, 0.6), 0 0 8px rgba(73, 89, 83, 0.6);
+      transition: 0.2s;
+    }
+  }
+
 //   Home Component
 
 #homeHeading {
@@ -479,6 +492,9 @@
       line-height: 3.2rem;
       background-color: transparent;
       border: none;
+      &#delete {
+        margin-right: 1.6rem;
+      }
       &:hover {
         color: rgb(73, 89, 83);
         font-weight: bold;
@@ -490,8 +506,8 @@
         color: #777777;
         font-weight: normal;
       }
-      &:first-child {
-        margin-right: 1.6rem;
+      &:last-child {
+        margin-right: 3.2rem;
       }
     }
     .first {
@@ -511,16 +527,15 @@
     //   border-bottom: none;
     // }
     .second {
-      margin-right: 6.4rem;
+      margin-right: 4.8rem;
       .amount {
-        margin-left: 3.2rem;
-        margin-right: 2.4rem;
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
       }
     }
   }
   .summary {
-    margin-top: 1.6rem;
-    margin-right: 6.4rem;
+    margin: 1.6rem 6.4rem 1.6rem 0;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -605,6 +620,103 @@
         height: 80%;
         width: 80%;
       }
+    }
+  }
+}
+
+// date picker section
+
+.datePickerWrap {
+  display: flex;
+  padding: 1.6rem;
+  & .datePickerCont {
+    &:first-child {
+      margin-right: 3.2rem;
+    }
+
+    & input {
+      margin-right: 0.8rem;
+    }
+  }
+
+}
+
+
+//date time picker
+
+.bootstrap-datetimepicker-widget { 
+
+  background-color: #e8e3e4;
+  &.dropdown-menu {
+    &.bottom {
+        &:before {
+            border-bottom-color: #e8e3e4;
+        }
+
+        &:after {
+            border-bottom-color: #e8e3e4;
+        }
+    }
+
+    &.top {
+        &:before {
+            border-top-color: #e8e3e4;
+        }
+
+        &:after {
+            border-top-color: #e8e3e4;
+        }
+    }
+  }
+
+  table {
+    & thead tr:first-child th {
+      &:hover {
+          background: rgb(73, 89, 83);
+          color: #e8e3e4;
+      }
+
+  }
+
+      & td {
+        &.today {
+          &:before {
+              border-bottom-color: rgb(73, 89, 83);
+              border-top-color: rgb(73, 89, 83);
+          }
+
+      }
+      
+      &.active,
+      &.active:hover {
+          background-color:rgb(73, 89, 83);
+          color: #e8e3e4;
+      }
+      &.active.today:before {
+        border-bottom-color: #e8e3e4;
+    }
+
+    span {
+      &.active {
+        background-color:rgb(73, 89, 83);
+        color: #e8e3e4;
+      }
+  }
+    
+      }
+  }
+}
+
+.input-group.date {
+  & .input-group-addon {
+    background-color: transparent;
+    border: none;
+    color: #1A1717;
+    border-radius: 4px;
+    &:hover {
+      background-color:rgb(73, 89, 83);
+      color: #e8e3e4;
+      transition: 0.2s;
     }
   }
 }
