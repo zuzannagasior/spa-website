@@ -88,10 +88,15 @@ export class Cart {
         return filteredCart.length;
     }
 
-    getCartSum() {
+    getCartSum(numberOfDays = 1) {
         let sum = 0;
+        console.log(numberOfDays, 'numberOfDays');
         this.getItSpaCart().forEach(item => {
-            sum = sum + item.price;
+            if (Object.keys(item).includes('beds')) {
+                sum = sum + (numberOfDays * item.price);
+            } else if (Object.keys(item).includes('time')) {
+                sum = sum + item.price;
+            }
         });
         return sum;
     }

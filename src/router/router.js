@@ -13,8 +13,8 @@ export class Router {
     mount(outlet) {
         this.outlet = outlet;
         this.body.on('routechange', (event, detail) => {
-            const { path } = detail;
-            this.navigate(path);
+            const { path, data } = detail;
+            this.navigate(path, data);
         });
     }
 
@@ -32,7 +32,9 @@ export class Router {
     }
 
     async navigate(path, data = {}) {
-        console.log('path', path);
+        console.log(data, 'data router');
+        history.pushState(data, '', path);
+
         if (this.has(path)) {
             //obsługa istniejącej ścieżki
             const { component } = this.get(path);
@@ -45,7 +47,5 @@ export class Router {
             const html = errorPage();
             this.outlet.empty().append(html);
         }
-
-        history.pushState(data, '', path);
     }
 }

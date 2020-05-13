@@ -16,7 +16,7 @@ export const nav = () => {
 
     const navBar = $('<nav><ul class="menu"></ul></nav>');
     const navLogo = $('<span class="logo">SPA i RELAX</span>');
-    let navBarItems = routes.map(route => {
+    let navBarItems = routes.filter(route => ['/', '/rooms', '/treatments'].includes(route.path)).map(route => {
         return navItem(route);
     });
     const navCartIcon = createCartIcon();

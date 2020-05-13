@@ -27,11 +27,9 @@ export const createCartSum = () => {
             const numberOfItems = cart.getNumberOfItems(item.name);
             return $(`<li><b>${item.name}</b> <div><span>${numberOfItems}x</span><span>${item.price},00 zł</span></div></li>`);
         })
-        const sum = $(`<p>Suma: <b>${cart.getCartSum()},00 zł</b></p>`);
+        // const sum = $(`<p>Suma: <b>${cart.getCartSum()},00 zł</b></p>`);
         roomsListWrap.prepend(roomsList);
-        cartSumContent.find('section').prepend(sum).prepend(roomsListWrap);
-
-        console.log(cartSumContent, 'cartSumContent');
+        cartSumContent.find('section').prepend(roomsListWrap);
 
     } else {
         cartSumContent.append($('<p>Twój koszyk jest pusty.</p>'));

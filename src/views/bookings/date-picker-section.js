@@ -43,7 +43,8 @@ export const datePickerSection = () => {
     datePicker.find("#dateFrom").on("dp.change", function (e) {
         const daysDifference = 31536000000; //365 days in minimist
         const dateFrom = Date.now(e.date);
-        $('#dateTo').data("DateTimePicker").minDate(e.date);
+        console.log(e.date, 'e.date')
+        $('#dateTo').data("DateTimePicker").minDate(e.date.add(1, 'days'));
         $('#dateTo').data("DateTimePicker").maxDate(new Date(dateFrom + daysDifference));
 
     });
