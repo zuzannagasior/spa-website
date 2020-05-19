@@ -1,10 +1,10 @@
 import { home, rooms, treatments, bookings, summary, register } from '../views';
 
 export const routes = [
-    { name: 'Home', path: '/', component: home, data: {} },
-    { name: 'Rooms', path: '/rooms', component: rooms, data: {} },
-    { name: 'Treatments', path: '/treatments', component: treatments, data: {} },
-    { name: 'Bookings', path: '/bookings', component: bookings, data: {} },
-    { name: 'Summary', path: '/summary', component: summary, data: {} },
-    { name: 'Register', path: '/register', component: register, data: {} }
+    { name: 'Strona główna', path: '/', component: home, data: {} },
+    { name: 'Pokoje', path: '/rooms', component: rooms, data: {} },
+    { name: 'Zabiegi', path: '/treatments', component: treatments, data: {} },
+    { name: 'Rezerwacja', path: '/bookings', component: bookings, data: {} },
+    { name: 'Podsumowanie rezerwacji', path: '/summary', component: summary, data: {} },
+    { name: 'Rejestracja', path: '/register', component: register, data: {} }
 ];

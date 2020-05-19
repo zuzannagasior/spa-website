@@ -2,13 +2,48 @@ import $ from 'jquery';
 import { API_URL } from '../../config/httpConfig';
 import { loginModal } from '../../modals/login-modal'
 
+const  checkPasswordStrength = (password) => {
+    const passwordLength = password.length;
+
+    const numberPattern = /\d+/;
+    const minOneNumber = numberPattern.test(password);
+
+    const capitalLetter = /[A-Z]+/;
+    const minOneCapitalLetter = capitalLetter.test(password);
+
+    const strengthTitle = 'Siła hasła: ';
+    if (passwordLength >= 12 && minOneCapitalLetter && minOneNumber) {
+        $('.passStrenght').html(`${strengthTitle}<span style="color: red">silne</span>`);
+    } else if (passwordLength >= 8 && minOneCapitalLetter) {
+        $('.passStrenght').html(`${strengthTitle}<span style="color: green">średnie</span>`);
+    } else if (passwordLength === 0) {
+        $('.passStrenght').empty();
+    } else {
+        $('.passStrenght').html(`${strengthTitle}<span style="color: blue">słabe</span>`);
+    };
+
+};
+
+const validateUser = async (email) => {
+    let invalidUser = false;
+
+    await fetch(`${API_URL}/users?email=${email}`)
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.length > 0) {
+                invalidUser =  true;
+            };
+        });
+    
+    return invalidUser;
+};
+
 const onFormSubmit = (e) => {
     e.preventDefault();
-    console.log('e', e);
 
     const registerForm = $('form');
     const newUser = {
-        login: registerForm.find('#userLogin').val(),
         password: registerForm.find('#userPassword').val(),
         email: registerForm.find('#userEmail').val()
     };
@@ -41,20 +76,19 @@ export const register = () => {
 
     const registerForm = $(`<form class="register">
                                 <div>
-                                    <label for="userLogin">Login*</label>
-                                    <input text="text" id="userLogin" name="userLogin" class="customInput" />
-                                </div>
-                                <div>
                                     <label for="userEmail">Adres email*</label>
                                     <input type="text" id="userEmail" name="userEmail" class="customInput" />
+                                    <span class="invalidMsg"></span>
                                 </div>
                                 <div>
                                     <label for="userPassword">Hasło*</label>
                                     <input type="password" id="userPassword" name="userPassword" class="customInput" />
+                                    <span class="passStrenght"></span>
                                 </div>
                                 <div>
                                     <label for="confirmPassword">Powtórz hasło*</label>
                                     <input type="password" id="confirmPassword" name="confirmPassword" class="customInput" />
+                                    <span class="invalidMsg"></span>
                                 </div>
 
                                 <p>* <span>- pole jest wymagane</span></p>
@@ -82,13 +116,13 @@ export const register = () => {
             const emailValue = e.target.value;
             const emailValid = regExp.test(emailValue.toLowerCase());
 
-            const hasMsg = registerForm.find('#userEmail').next().hasClass("invalidMsg");
-            if (!emailValid && !hasMsg) {
-                const invalidMsg = $('<span class="invalidMsg"><i>Niewłaściwy adres email.</i></span>');
-
-                registerForm.find('#userEmail').after(invalidMsg);
-            } else if (emailValid && hasMsg) {
-                registerForm.find('#userEmail').next().remove();
+            // const hasMsg = registerForm.find('#userEmail').next().hasClass("invalidMsg");
+            if (!emailValid) {
+                const invalidMsg = $('<i>Niewłaściwy adres email.</i>');
+                registerForm.find('#userEmail').next().html(invalidMsg);
+                formInvalid = true;
+            } else {
+                registerForm.find('#userEmail').next().empty();
             }
         }
 
@@ -101,23 +135,46 @@ export const register = () => {
 
             const passwordValid = password === confirmPassValue;
 
-            const hasMsg = registerForm.find('#confirmPassword').next().hasClass("invalidMsg");
-            if (!passwordValid && !hasMsg) {
-                const invalidMsg = $('<span class="invalidMsg"><i>Podane hasła różnią się.</i></span>');
+            //const hasMsg = registerForm.find('#confirmPassword').next().hasClass("invalidMsg");
+            if (!passwordValid) {
+                const invalidMsg = $('<i>Podane hasła różnią się.</i>');
 
-                registerForm.find('#confirmPassword').after(invalidMsg);
-            } else if (passwordValid && hasMsg) {
-                registerForm.find('#confirmPassword').next().remove();
+                registerForm.find('#confirmPassword').next().html(invalidMsg);
+                formInvalid = true;
+            } else {
+                registerForm.find('#confirmPassword').next().empty();
             }
         }
 
-        if (registerForm.find('.invalidMsg').length > 0) {
-            formInvalid = true;
-        }
+        // if (registerForm.find('.invalidMsg').length > 0) {
+        //     formInvalid = true;
+        // }
 
         registerForm.find('button').attr('disabled', formInvalid);
+
+        // check password strength
+
+        if (e.target.id === 'userPassword') {
+            checkPasswordStrength(e.target.value);
+        }
     })
 
+    // user validation
+    registerForm.find('#userEmail').on('blur', async (e) => {
+        if (!!e.target.value.trim()) {
+            const invalidUser =  await validateUser(e.target.value);
+            const invalidMsg = $('<i>Podany adres email jest już w systemie.</i>');
+
+            if (invalidUser) {
+                registerForm.find('#userEmail').next().html(invalidMsg);
+            } else if (registerForm.find('#userEmail').next().html() === invalidMsg) {
+                registerForm.find('#userEmail').next().empty();
+            }
+
+            $('.register').find('button').attr('disabled', invalidUser);
+
+        }
+    });
 
 
     registerBox.prepend(registerForm).prepend(heading);

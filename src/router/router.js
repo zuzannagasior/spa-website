@@ -41,6 +41,8 @@ export class Router {
             const html = await component();
             // renderuje nowy widok wewnątrz elementu
             this.outlet.empty().append(html);
+            $(window).scrollTop(0);
+
         } else {
             //obsługa nieistniejącej ścieżki
             console.log('fjdh');

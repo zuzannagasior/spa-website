@@ -206,6 +206,145 @@
     height: 100vh;
     width: 100%;
     background-size: cover;
+
+    a {
+      position: absolute;
+      bottom: 3.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6.4rem;
+      height: 6.4rem;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      &:hover {
+        background-color: rgba(232, 227, 228, 0.6);
+        transition: .2s;
+      }
+      &:focus {
+        outline-color: rgba(232, 227, 228, 0.6);
+      }
+    }
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 10rem;
+  margin-top: 0;
+
+  .logo {
+    height: 32rem;
+    img {
+      width: 100%;
+      height: 100%; 
+      object-fit: cover;
+    }
+  }
+  p {
+    font-style: italic;
+    text-align: center;
+  }
+}
+
+#photoLine {
+  background: url(assets/img/home-1.jpg) no-repeat center center fixed;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+#links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 10rem;
+  &>div {
+    display: flex;
+    margin: 3.2rem;
+    .imgBox {
+      min-width: 40rem;
+      height: auto;
+      img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover;
+      }
+    }
+    &>div:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 3.2rem;
+      a {
+        align-self: flex-start;
+        color: rgb(73, 89, 83);
+        cursor: pointer;
+        &:hover {
+          color: rgba(73, 89, 83, 0.6);
+          transition: .2s;
+        }
+      }
+    }
+  }
+  &>div:last-child {
+    flex-direction:row-reverse;
+  }
+}
+
+#reviews {
+  border-top: 1.5px solid rgba(73, 89, 83, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 10rem;
+  button {
+    background-color: transparent;
+    border: none;
+    width: 4rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: rgba(73, 89, 83, 0.6);
+      transition: 0.2s;
+      svg {
+        fill: rgb(232, 227, 228);
+      }
+    }
+    &:focus {
+      outline-color: rgba(73, 89, 83, 0.6);
+    }
+  }
+  button:first-child {
+    margin-right: 3.2rem;
+  }
+  button:last-child {
+    margin-left: 3.2rem;
+  }
+  &>div {
+    display: flex;
+    .imgBox {
+      width: 32rem;
+      height: 20rem;
+      border-radius: 10px;
+      img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+    div:last-child {
+      margin-left: 3.2rem;
+      width: 32rem;
+    }
+  }
 }
 
 //   Rooms Component
@@ -650,6 +789,10 @@
         p {
           margin-top: 3.2rem;
         }
+
+        a {
+          cursor: pointer;
+        }
       }
     }
     .modalNav {
@@ -901,6 +1044,11 @@
 
     span {
       margin-top: 1.6rem;
+    }
+
+    .passStrenght {
+      margin-top: 0.4rem;
+      margin-bottom: 0;
     }
 
     .invalidMsg {

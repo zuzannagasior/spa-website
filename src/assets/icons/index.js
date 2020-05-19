@@ -7,3 +7,6 @@ export * from './menuIcon';
 export * from './peopleIcon';
 export * from './personIcon';
 export * from './timeIcon';
+export * from './arrowDownDblIcon';
+export * from './arrowLeftIcon';
+export * from './arrowRightIcon';

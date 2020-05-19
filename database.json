@@ -1,5 +1,21 @@
 {
-  "users": [],
+  "users": [
+    {
+      "password": "123",
+      "email": "zuz@op.pl",
+      "id": 1
+    },
+    {
+      "password": "123",
+      "email": "kasia@op.pl",
+      "id": 2
+    },
+    {
+      "password": "123",
+      "email": "zuz123@op.pl",
+      "id": 3
+    }
+  ],
   "rooms": [
     {
       "id": "r_1",

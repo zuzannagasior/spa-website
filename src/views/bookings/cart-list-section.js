@@ -45,7 +45,7 @@ export const cartListSection = () => {
     const datePicker = datePickerSection();
 
     const sum = $(`<div class="summary"><span>Suma: <b><span class="sum">${cart.getCartSum()}</span>,00 zł</b></span>
-                        <button class="customButton">Przejdź do podsumowania</button>
+                        <button class="customButton colored">Przejdź do podsumowania</button>
                     </div>`);
 
     sum.find('button').on('click', () => {

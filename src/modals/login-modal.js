@@ -2,11 +2,12 @@ import $ from 'jquery';
 import { API_URL } from '../config/httpConfig';
 import { closeIcon } from '../assets/icons/closeIcon'
 import spaLogo from '../assets/img/sparelaxlogo.png';
+import { confirmModal } from './confirm-booking-modal'
 
-const checkUser = async (u, p) => {
+const checkUser = async (e, p) => {
     let invalidUser = true;
 
-    await fetch(`${API_URL}/users?login=${u}`)
+    await fetch(`${API_URL}/users?email=${e}`)
         .then(response => response.json())
         .then(data => {
             console.log('data.length', data.length);
@@ -29,8 +30,8 @@ export const loginModal = (afterRegister = false) => {
                                 <div class="modalContent">
                                     <form class="login">
                                         <h3>Zaloguj się</h3>
-                                        <input name="userName" id="userName" type='text' placeholder="login" class="customInput" />
-                                        <input name="userPassword" id="userPassword" type='password' placeholder="hasło" class="customInput" />
+                                        <input name="userEmail" id="userEmail" type='text' placeholder="Adres email" class="customInput" />
+                                        <input name="userPassword" id="userPassword" type='password' placeholder="Hasło" class="customInput" />
                                         <button type="submit" class="customButton colored" disabled>Zaloguj</button>
                                         <p>Nie masz konta? <a>Zarejestruj się!</a></p>
                                     </form>
@@ -52,22 +53,24 @@ export const loginModal = (afterRegister = false) => {
 
     console.log('loginForm', loginForm);
     loginForm.find('input').on('input', () => {
-        const login = loginForm.find('#userName').val();
+        const email = loginForm.find('#userEmail').val();
         const password = loginForm.find('#userPassword').val();
 
-        loginForm.find('button').attr('disabled', !(!!login.trim() && !!password.trim()));
+        loginForm.find('button').attr('disabled', !(!!email.trim() && !!password.trim()));
     })
 
     loginForm.on('submit', async (e) => {
         e.preventDefault();
-        const login = loginForm.find('#userName').val();
+        const email = loginForm.find('#userEmail').val();
         const password = loginForm.find('#userPassword').val();
 
-        const invalidUser =  await checkUser(login, password);
+        const invalidUser =  await checkUser(email, password);
 
         if (!invalidUser) {
-            console.log('jestem');
+            loginForm.find('button').trigger('routechange', { path: '/' });
             $(document.body).find('#infoModal').remove();
+
+            $(document.body).append(confirmModal());
         } else {
             const invalidUserMsg = $('<span class="invalidMsg"><i>Nieprawidłowy login lub hasło.</i></span>');
 

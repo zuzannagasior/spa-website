@@ -8,6 +8,7 @@ const createCartItemCont = (data) => {
     const cart = new Cart();
 
     const numberOfItems = cart.getNumberOfItems(data.name);
+    const priceLabel = Object.keys(data).includes('beds') ? ' / noc' : '';
     const cartItemCont = $(`<div class="first">
                     <button id="delete">x</button>
                     <div class="imgBox">
@@ -19,7 +20,7 @@ const createCartItemCont = (data) => {
                     <button id="add">+</button>
                     <span class="amount">${numberOfItems}</span>
                     <button id="remove">-</button>
-                    <span class="price">${data.price},00 zł</span>
+                    <span class="price">${data.price},00 zł${priceLabel}</span>
                 </div>`);
 
     cartItemCont.find('button#remove').attr('disabled', numberOfItems === 1);
