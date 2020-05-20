@@ -10,3 +10,5 @@ export * from './timeIcon';
 export * from './arrowDownDblIcon';
 export * from './arrowLeftIcon';
 export * from './arrowRightIcon';
+export * from './phoneIcon';
+export * from './envelopeIcon';
