@@ -25,7 +25,7 @@ const checkUser = async (e, p) => {
 
 export const loginModal = (afterRegister = false) => {
 
-
+    $("body").addClass("modal-open");
     const state = history.state;
     console.log(state, 'state')
     const cart = new Cart();
@@ -51,6 +51,7 @@ export const loginModal = (afterRegister = false) => {
     div.find('.close').prepend(closeIcon);
     div.find('.close').on('click', () => {
         $(document.body).find('#infoModal').remove();
+        $("body").removeClass("modal-open");
     });
 
     const loginForm = div.find('.login');
@@ -126,7 +127,7 @@ export const loginModal = (afterRegister = false) => {
 
         loginForm.find('a').trigger('routechange', { path: '/register', data: data  });
         $(document.body).find('#infoModal').remove();
-
+        $("body").removeClass("modal-open");
     })
   
     return div;

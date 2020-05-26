@@ -3,6 +3,8 @@ import { closeIcon } from '../assets/icons/closeIcon'
 import spaLogo from '../assets/img/sparelaxlogo.png';
 
 export const confirmModal = () => {
+    
+    $("body").addClass("modal-open");
 
     const div = $(`<div id="infoModal">
                         <div class="modalWrapper">
@@ -21,6 +23,7 @@ export const confirmModal = () => {
     div.find('.close').prepend(closeIcon);
     div.find('.close').on('click', () => {
         $(document.body).find('#infoModal').remove();
+        $("body").removeClass("modal-open");
     })
   
     return div;

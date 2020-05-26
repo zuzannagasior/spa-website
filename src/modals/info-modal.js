@@ -3,6 +3,8 @@ import { closeIcon } from '../assets/icons/closeIcon'
 import spaLogo from '../assets/img/sparelaxlogo.png';
 
 export const infoModal = (data) => {
+    $("body").addClass("modal-open");
+
     const treatmentPath = window.location.pathname.includes('treatment');
     const roomsPath = window.location.pathname.includes('rooms');
 
@@ -27,7 +29,7 @@ export const infoModal = (data) => {
                                     <p>${modalText}</p>
                                 </div>
                                 <div class="modalNav">
-                                    <button class="customButton">${btnText}</button>
+                                    <button class="customButton colored">${btnText}</button>
                                     <button class="customButton">Przejdź do koszyka</button>
                                 </div>
                             </div>    
@@ -37,15 +39,17 @@ export const infoModal = (data) => {
     div.find('.close').prepend(closeIcon);
     div.find('.close').on('click', () => {
         $(document.body).find('#infoModal').remove();
+        $("body").removeClass("modal-open");
     })
     div.find('.modalNav button:first-child').on('click', () => {
         div.find('.modalNav button:first-child').trigger('routechange', { path: '/treatments' });
         $(document.body).find('#infoModal').remove();
+        $("body").removeClass("modal-open");
     })
     div.find('.modalNav button:last-child').on('click', () => {
         div.find('.modalNav button:last-child').trigger('routechange', { path: '/bookings' });
         $(document.body).find('#infoModal').remove();
-
+        $("body").removeClass("modal-open");
     })
   
     return div;
