@@ -68,6 +68,16 @@ export class Cart {
         this.updateCartSum();
     }
 
+    deleteAllCart() {
+        var allCookies = document.cookie.split(';'); 
+
+        for (var i = 0; i < allCookies.length; i++) {
+            document.cookie = allCookies[i] + "=;expires=" 
+            + new Date(0).toUTCString(); 
+        }
+        this.updateCartSum();
+    }
+
     showCartSum(action) {
         const cartSum = $('.cartSum');
         if (action === 'show') {

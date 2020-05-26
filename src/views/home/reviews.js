@@ -60,19 +60,23 @@ export const reviewsSection = () => {
         $('#reviews').find('button:first-child').after(reviewBox);
     });
 
-    const idInterwalu = setInterval(() => {
-        const numberOfReviews = reviews.length;
+    const intervalId = setInterval(() => {
+        if ($('#reviews').length > 0) {
+            const numberOfReviews = reviews.length;
 
-        if (indexOfReview < numberOfReviews - 1) {
-            indexOfReview++;
+            if (indexOfReview < numberOfReviews - 1) {
+                indexOfReview++;
+            } else {
+                indexOfReview = 0;
+            }
+    
+            const reviewBox = createReviewBox(indexOfReview);
+            $('#reviews').find('button:first-child').next().remove();
+            $('#reviews').find('button:first-child').after(reviewBox);    
         } else {
-            indexOfReview = 0;
+            clearInterval(intervalId);
         }
-
-        const reviewBox = createReviewBox(indexOfReview);
-        $('#reviews').find('button:first-child').next().remove();
-        $('#reviews').find('button:first-child').after(reviewBox);
-    }, 5000);
+        }, 5000);
 
     return reviewsSection;
 };

@@ -71,8 +71,6 @@ export const register = () => {
     const heading = $('<header><h1>Rejestracja</h1></header>');
 
     const state = history.state;
-    console.log(state, 'state')
-    console.log(history, 'history')
 
     const registerForm = $(`<form class="register">
                                 <div>

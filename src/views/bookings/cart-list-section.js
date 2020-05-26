@@ -3,7 +3,7 @@ import {
     Cart
 } from '../../cart/cart';
 import { cartItem } from './cart-item';
-import { datePickerSection } from './date-picker-section';
+import { datePickerSection, validateDate } from './date-picker-section';
 
 export const cartListSection = () => {
     const cart = new Cart();
@@ -50,11 +50,19 @@ export const cartListSection = () => {
 
     sum.find('button').on('click', () => {
 
-        const data = {
-            dateFrom: $('#dateFrom').data("DateTimePicker").viewDate().toDate(),
-            dateTo: $('#dateTo').data("DateTimePicker").viewDate().toDate()
-        };
-        sum.find('button').trigger('routechange', { path: '/summary', data: data });
+        const dateValid = validateDate();
+
+        if (dateValid) {
+            const data = {
+                dateFrom: $('#dateFrom').data("DateTimePicker").viewDate().toDate(),
+                dateTo: $('#dateTo').data("DateTimePicker").viewDate().toDate()
+            };
+            sum.find('button').trigger('routechange', { path: '/summary', data: data });
+
+        } else {
+            console.log('invalid')
+        }
+   
     });
 
     cartListBox.prepend(sum).prepend(treatmentsListToDisplay).prepend(treatment)

@@ -2,8 +2,6 @@ import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'eonasdan-bootstrap-datetimepicker';
 import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker';
-import 'bootstrap-select';
-import 'bootstrap-select/dist/css/bootstrap-select';
 import 'moment/locale/pl';
 import './it-spa.scss';
 import { Router, routes } from './router';

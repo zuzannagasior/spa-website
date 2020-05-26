@@ -1,8 +1,11 @@
 import $ from 'jquery';
 import { API_URL } from '../config/httpConfig';
-import { closeIcon } from '../assets/icons/closeIcon'
+import { closeIcon } from '../assets/icons/closeIcon';
 import spaLogo from '../assets/img/sparelaxlogo.png';
-import { confirmModal } from './confirm-booking-modal'
+import { confirmModal } from './confirm-booking-modal';
+import {
+    Cart
+} from '../cart/cart';
 
 const checkUser = async (e, p) => {
     let invalidUser = true;
@@ -21,6 +24,11 @@ const checkUser = async (e, p) => {
 };
 
 export const loginModal = (afterRegister = false) => {
+
+
+    const state = history.state;
+    console.log(state, 'state')
+    const cart = new Cart();
 
     const div = $(`<div id="infoModal">
                         <div class="modalWrapper">
@@ -70,7 +78,38 @@ export const loginModal = (afterRegister = false) => {
             loginForm.find('button').trigger('routechange', { path: '/' });
             $(document.body).find('#infoModal').remove();
 
-            $(document.body).append(confirmModal());
+            console.log(cart.getItSpaCart());
+
+            const rooms = cart.getItSpaCart()
+                .filter(item => Object.keys(item).includes('beds'))
+                .map(item => item.id);
+
+            const treatments = cart.getItSpaCart()
+                .filter(item => Object.keys(item).includes('time'))
+                .map(item => item.id);
+
+            const newBooking = {
+                dateFrom: state.dateFrom,
+                dateTo: state.dateTo,
+                email: email, 
+                rooms: rooms,
+                treatments: treatments
+            };
+        
+            console.log('newBooking', newBooking);
+            fetch(`${API_URL}/bookings`, {
+            method: 'POST',
+            body: JSON.stringify({...newBooking}),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+            })
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json);
+                    cart.deleteAllCart();
+                    $(document.body).append(confirmModal());
+                })
         } else {
             const invalidUserMsg = $('<span class="invalidMsg"><i>Nieprawidłowy login lub hasło.</i></span>');
 
@@ -80,7 +119,12 @@ export const loginModal = (afterRegister = false) => {
 
     })
     loginForm.find('a').on('click', () => {
-        loginForm.find('a').trigger('routechange', { path: '/register' });
+        const data = {
+            dateFrom: state.dateFrom,
+            dateTo:  state.dateFrom
+        };
+
+        loginForm.find('a').trigger('routechange', { path: '/register', data: data  });
         $(document.body).find('#infoModal').remove();
 
     })
