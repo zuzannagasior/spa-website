@@ -7,7 +7,7 @@ export const headingSection = () => {
 
     seeMoreBtn.on('click', () => { 
         $('html, body').animate({
-            scrollTop: $("#about").offset().top
+            scrollTop: $("#about").offset().top - $("nav").height()
         }, 500);
     });
 

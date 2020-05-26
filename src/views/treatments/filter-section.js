@@ -4,15 +4,23 @@ import { filterByArea } from './treatments';
 
 export const filterSection = () => {
     console.log('treatmentAreas',areas);
-    let filterBtns = new Array;
+    const label = $(`<label for="filters">Filtruj</label>`);
+
+    const filters = $(`<select id="filters" class="form-control"></select>`);
+
+    let filterOptions = new Array;
     areas.forEach((value, key) => {
-        let filterBtn = $(`<button class="customButton" value=${key}>${value}</button>`);
-        console.log('key', key);
-        filterBtn.on('click', (event) => {
-            filterByArea(event.target.value);
-        });
-        return filterBtns.push(filterBtn);
+        let filterOption = $(`<option value=${key}>${value}</option>`);
+  
+        return filterOptions.push(filterOption);
     });
 
-    return filterBtns;
+    filters.prepend(filterOptions);
+    filters.after(label);
+
+    filters.on('change', (event) => {
+        filterByArea(event.target.value);
+    });
+
+    return filters;
 };

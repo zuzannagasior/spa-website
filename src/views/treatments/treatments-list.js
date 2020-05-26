@@ -18,6 +18,9 @@ export const treatmentsList = (availableTreatments) => {
     const availableTreatmentsToDisplay = availableTreatments.map(treatmentData => {
         return treatmentItem(treatmentData);
     });
+
+    
+
     treatmentsListCont.prepend(availableTreatmentsToDisplay);
     treatmentsListWrap.prepend(treatmentsListCont).prepend(filterSectionToDisplay).prepend(treatmentsListIntro);
     fragment.append(treatmentsListWrap);
