@@ -1,1 +1,1 @@
-export const API_URL = 'http://my-json-server.typicode.com/zuzannagasior/spa-website';
+export const API_URL = 'https://my-json-server.typicode.com/zuzannagasior/spa-website';
