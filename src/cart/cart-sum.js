@@ -23,7 +23,6 @@ export const createCartSum = () => {
 
         const roomsListWrap = $(`<ul></ul>`);
         const roomsList = cartData.map(item => {
-            console.log('item', item);
             const numberOfItems = cart.getNumberOfItems(item.name);
             return $(`<li><b>${item.name}</b> <div><span>${numberOfItems}x</span><span>${item.price},00 zł</span></div></li>`);
         })
@@ -44,7 +43,6 @@ export const createCartSum = () => {
 
     
     cartSumBox.find('button').on('click', () => {
-        console.log("cartSumContent.find('button')", cartSumContent.find('button'));
         cartSumBox.find('button').trigger('routechange', { path: '/bookings' });
         cart.showCartSum('hide');
     });

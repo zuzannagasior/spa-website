@@ -21,9 +21,7 @@ export const summary = () => {
     const heading = $('<header><h1>Podsumowanie rezerwacji</h1></header>');
 
     const state = history.state;
-    // console.log(state, 'state')
-    // console.log(new Date(state.dateFrom.getMinutes()), 'state.dateFrom.getMinutes()')
-
+    
     const summaryCont = $(new DocumentFragment());
     
     const dateSection = $(`<div class="summarySection">

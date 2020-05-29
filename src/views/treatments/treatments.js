@@ -22,7 +22,6 @@ export const filterByArea = async (area) => {
 
     await getTreatmentsData(area)
         .then(function (treatments) {
-            console.log(treatments);
             availableTreatments = treatments;
         })
         .catch(function (error) {

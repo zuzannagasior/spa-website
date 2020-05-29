@@ -13,7 +13,6 @@ const checkUser = async (e, p) => {
     await fetch(`${API_URL}/users?email=${e}`)
         .then(response => response.json())
         .then(data => {
-            console.log('data.length', data.length);
 
             if (data.length > 0) {
                 invalidUser =  data[0].password !== p;
@@ -27,7 +26,6 @@ export const loginModal = (afterRegister = false) => {
 
     $("body").addClass("modal-open");
     const state = history.state;
-    console.log(state, 'state')
     const cart = new Cart();
 
     const div = $(`<div id="infoModal">
@@ -60,7 +58,6 @@ export const loginModal = (afterRegister = false) => {
         loginForm.before('<div class="validMsg"><p>Rejestracja zakończona pomyślnie. Zaloguj się aby zatwierdzić rezerwację.</p></div>');
     }
 
-    console.log('loginForm', loginForm);
     loginForm.find('input').on('input', () => {
         const email = loginForm.find('#userEmail').val();
         const password = loginForm.find('#userPassword').val();
@@ -79,8 +76,6 @@ export const loginModal = (afterRegister = false) => {
             loginForm.find('button').trigger('routechange', { path: '/' });
             $(document.body).find('#infoModal').remove();
 
-            console.log(cart.getItSpaCart());
-
             const rooms = cart.getItSpaCart()
                 .filter(item => Object.keys(item).includes('beds'))
                 .map(item => item.id);
@@ -97,7 +92,6 @@ export const loginModal = (afterRegister = false) => {
                 treatments: treatments
             };
         
-            console.log('newBooking', newBooking);
             fetch(`${API_URL}/bookings`, {
             method: 'POST',
             body: JSON.stringify({...newBooking}),
@@ -107,7 +101,6 @@ export const loginModal = (afterRegister = false) => {
             })
                 .then(response => response.json())
                 .then(json => {
-                    console.log(json);
                     cart.deleteAllCart();
                     $(document.body).append(confirmModal());
                 })

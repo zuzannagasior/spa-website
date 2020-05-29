@@ -59,10 +59,7 @@ export const cartListSection = () => {
             };
             sum.find('button').trigger('routechange', { path: '/summary', data: data });
 
-        } else {
-            console.log('invalid')
         }
-   
     });
 
     cartListBox.prepend(sum).prepend(treatmentsListToDisplay).prepend(treatment)

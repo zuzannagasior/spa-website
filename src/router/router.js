@@ -32,20 +32,16 @@ export class Router {
     }
 
     async navigate(path, data = {},) {
-        console.log(data, 'data router');
         history.pushState(data, '', path);
 
         if (this.has(path)) {
-            //obsługa istniejącej ścieżki
             const { component, title } = this.get(path);
             const html = await component();
-            // renderuje nowy widok wewnątrz elementu
+
             this.outlet.empty().append(html);
             $(window).scrollTop(0);
             document.title = title;
         } else {
-            //obsługa nieistniejącej ścieżki
-            console.log('fjdh');
             const html = errorPage();
             document.title = 'Error! Nie ma takiej podstrony! | Hotel SPA i RELAX Lubienice';
             this.outlet.empty().append(html);

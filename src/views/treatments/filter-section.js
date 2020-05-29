@@ -3,7 +3,6 @@ import { areas } from '../../config/treatmentAreas';
 import { filterByArea } from './treatments';
 
 export const filterSection = () => {
-    console.log('treatmentAreas',areas);
     const label = $(`<label for="filters">Filtruj</label>`);
 
     const filters = $(`<select id="filters" class="form-control"></select>`);

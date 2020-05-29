@@ -16,7 +16,6 @@ export class Cart {
     get() {
         const cookies = document.cookie.split(';');
 
-        //zwraca ciąg znaków ("klucz=wartosc") lub undefined
         return cookies.find(cookie => cookie.startsWith(this.key));
     }
 
@@ -26,7 +25,6 @@ export class Cart {
 
     getItSpaCart() {
         const cookieValue = this.get().slice(12);
-        // "{foo:1, bar:[2, 3, 4]}" --> {foo:1, bar:[2,3,4]}
         const parsedValue = JSON.parse(cookieValue);
 
         return parsedValue;
@@ -38,17 +36,13 @@ export class Cart {
         document.cookie = `${this.key}=${stringifiedValue}`;
     }
 
-    // zakładając, że koszyk jest tablicą
     add(item) {
-        // dodaje produkt do koszyka
-        console.log('item', item);
         const cartValue = this.getItSpaCart();
         this.setItSpaCart([...cartValue, item]); //cartValue.concat(item)
         this.updateCartSum();
     }
 
     remove(item) {
-        // usuwa produkt z koszyka
         const cartValue = this.getItSpaCart();
         const itemInCart = cartValue.findIndex(val => val.name === item.name);
 
@@ -60,7 +54,6 @@ export class Cart {
     }
 
     delete(item) {
-        // usuwa wszystkie produkty tego rodzaju z koszyka
         const cartValue = this.getItSpaCart();
         const cartValueFiltered = cartValue.filter(cartItem => cartItem.name !== item.name);
         
@@ -100,7 +93,6 @@ export class Cart {
 
     getCartSum(numberOfDays = 1) {
         let sum = 0;
-        console.log(numberOfDays, 'numberOfDays');
         this.getItSpaCart().forEach(item => {
             if (Object.keys(item).includes('beds')) {
                 sum = sum + (numberOfDays * item.price);

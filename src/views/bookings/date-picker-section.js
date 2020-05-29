@@ -4,8 +4,6 @@ import {
 } from '../../cart/cart';
 
 export const validateDate = () => {
-    console.log($('#dateTo').data("DateTimePicker"));
-    console.log($('[name="dateTo"]').val());
     let valid = true;
 
     if (!$('[name="dateFrom"]').val().trim() || !$('[name="dateTo"]').val().trim()) {
@@ -94,12 +92,6 @@ export const datePickerSection = () => {
             validateDate();
         }
     });
-
-    // datePicker.find('input').on('change', () => {
-    //     console.log($('#dateFrom').data("DateTimePicker").viewDate(), '$("#dateFrom").data("DateTimePicker")');
-    //     console.log('jestem');
-    //     // $('#dateFrom').data("DateTimePicker").maxDate(e.date);
-    // });
 
     datePickerSectionWrapper.prepend(datePicker);
     fragment.append(datePickerSectionWrapper);

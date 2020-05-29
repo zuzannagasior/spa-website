@@ -7,7 +7,6 @@ const toggleMenu = () => {
     const toggleSpan = $('.toggle');
     
     if (menuUl.hasClass("active")) {
-        console.log('jestem');
         menuUl.removeClass("active");
         toggleSpan.empty().prepend(menuIcon);
     } else {

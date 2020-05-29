@@ -57,11 +57,8 @@ const onFormSubmit = (e) => {
     })
         .then(response => response.json())
         .then(json => {
-            console.log(json);
             $(document.body).append(loginModal(true));
         })
-
-    console.log(newUser, 'newUser');
 };
 
 export const register = () => {

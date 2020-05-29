@@ -10,9 +10,6 @@ export const headingSection = () => {
 
     
     seeMoreBtn.on('click', () => { 
-        console.log('$("nav").height()', $("nav").height());
-        console.log('$("#roomsList").offset().top', $("#roomsList").offset().top);
-
         $('html, body').animate({
             scrollTop: $(".roomsListIntro").offset().top - $("nav").height()
         }, 500);

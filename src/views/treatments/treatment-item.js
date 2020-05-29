@@ -21,7 +21,6 @@ const showMore = (id) => {
 
 const showHover = (event, id) => {
     const treatmentItemBox = $(`#${id}`).find('.imgBox');
-    console.log('treatmentItemBox', treatmentItemBox);
     if (event.type === 'mouseover') {
         treatmentItemBox.addClass("showHover");
     } else {
