@@ -1,0 +1,55 @@
+@keyframes showCartSum {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes showReview {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideTitleFromTop {
+    from {
+        opacity: 0;
+        top: calc(50% - 100px);
+    }
+
+    to {
+        opacity: 1;
+        top: 50%;
+    }
+}
+
+@keyframes loadTreatmentItem {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideModalFromTop {
+    from {
+        opacity: 0;
+        margin-top: calc(10% - 100px);
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 10%;
+    }
+}

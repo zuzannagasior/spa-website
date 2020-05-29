@@ -1,0 +1,78 @@
+#registerBox {
+    min-height: 100vh;
+    margin: 0 20rem;
+    margin-bottom: 1.6rem;
+
+    header {
+        color: $secondary-color;
+        border-bottom: $border-style $secondary-color-op-6;
+        padding-top: 12rem;
+        margin-bottom: 4rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 1.6rem;
+        align-items: center;
+
+        input {
+            width: 24rem;
+        }
+
+        label {
+            margin-top: 1.6rem;
+        }
+
+        span {
+            margin-top: 1.6rem;
+        }
+
+        .passStrenght {
+            margin-top: 0.4rem;
+            margin-bottom: 0;
+        }
+
+        .invalidMsg {
+            margin-top: 0.4rem;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 0.8rem;
+            span {
+                font-size: 1.2rem;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            &:last-child {
+                flex-direction: row;
+                margin: 3.2rem 1.6rem;
+                button:first-child {
+                    margin-right: 1.6rem;
+                    @media (max-width: $breakpoint-small) {
+                        margin-right: 0;
+                    }
+                }
+                @media (max-width: $breakpoint-small) {
+                    flex-direction: column-reverse;
+                    align-items: center;
+                }
+                button:last-child {
+                    @media (max-width: $breakpoint-small) {
+                        margin-bottom: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: $breakpoint-large) {
+        margin: 0 5rem;
+    }
+    @media (max-width: $breakpoint-small) {
+        margin: 0 2rem;
+    }
+}

@@ -1,0 +1,135 @@
+nav {
+    background: $main-color-op-6;
+    padding: 0 1.5rem;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    z-index: 9998;
+    .logo {
+        font-size: 2.4rem;
+        font-weight: bold;
+        padding: 1.5rem 0.5rem;
+        flex-grow: 1;
+        font-family: $font-secondary;
+        a {
+            cursor: pointer;
+            color: inherit;
+            text-decoration: inherit;
+        }
+    }
+    .cartIcon {
+        font-size: 2rem;
+        padding: 1.5rem 0.5rem;
+        margin-top: 0.4rem;
+    }
+    .toggle {
+        font-size: 2rem;
+        padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+        margin-left: 1.5rem;
+        margin-top: 0.8rem;
+        text-align: right;
+        display: none;
+        cursor: pointer;
+        @media (max-width: $breakpoint-medium) {
+            display: block;
+        }
+    }
+    .closeIcon {
+        @media (max-width: $breakpoint-medium) {
+            display: none;
+        }
+    }
+    .menu {
+        list-style-type: none;
+        display: flex;
+        margin-bottom: 0;
+        li {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 1.5rem 2rem;
+            white-space: nowrap;
+            a {
+                color: $dark-color;
+                display: block;
+                line-height: 100%;
+                text-decoration: none;
+                padding-bottom: 0.2rem;
+                margin-top: 0.8rem;
+                cursor: pointer;
+                border-bottom: $border-style transparent;
+                &:hover {
+                    text-decoration: none;
+                    border-color: $secondary-color-op-6;
+                    transition: 0.2s;
+                    color: $secondary-color;
+                }
+            }
+        }
+        @media (max-width: $breakpoint-medium) {
+            flex-direction: column;
+            align-items: center;
+            flex-basis: 100%;
+            order: 2;
+            display: none;
+        }
+    }
+    .active {
+        display: flex;
+    }
+    @media (max-width: $breakpoint-medium) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+// cart in navigation
+.cartSum {
+    width: 30rem;
+    background-color: $main-color-op-6;
+    position: fixed;
+    margin-top: 6.4rem;
+    right: 0;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid $secondary-color-op-6;
+    border-bottom: 2px solid $secondary-color-op-6;
+    animation-duration: 0.5s;
+    animation-name: showCartSum;
+    @media (max-width: $breakpoint-small) {
+        width: 100%;
+    }
+    p {
+        margin-top: 1.6rem;
+        text-align: right;
+    }
+    section {
+        width: 100%;
+        text-align: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        ul {
+            list-style-type: none;
+            li {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 1rem;
+                b {
+                    flex-basis: 60%;
+                }
+                div {
+                    flex-basis: 40%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+}
+.showCart {
+    display: flex;
+}

@@ -1,0 +1,12 @@
+#errorBox {
+    padding: 12rem 20rem;
+    height: 60vh;
+    @media (max-width: $breakpoint-large) {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    @media (max-width: $breakpoint-small) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

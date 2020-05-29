@@ -1,0 +1,53 @@
+// contact section
+
+#contact {
+  border-top: $border-style $secondary-color-op-6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5rem 10rem;
+  color: $light-gray-color;
+  .imgBox {
+    width: 40rem;
+    height: 20rem;
+    img {
+      @include imgFit;
+    }
+    @media (max-width: $breakpoint-small) {
+      width: 30rem;
+      height: 15rem;
+    }
+  }
+  & > div:last-child {
+    width: 40rem;
+    h4 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $dark-color;
+    }
+    svg {
+      transform: translateY(2px);
+      margin-right: 0.8rem;
+    }
+    @media (max-width: $breakpoint-small) {
+      width: 20rem;
+    }
+  }
+  //mixin
+  @media (max-width: $breakpoint-medium) {
+    padding: $mp-medium;
+  }
+  @media (max-width: $breakpoint-small) {
+    padding: $mp-small;
+    flex-direction: column;
+  }
+}
+
+// footer section
+
+#footer {
+  text-align: center;
+  border-top: $border-style $secondary-color-op-6;
+  padding: 1.6rem;
+  color: $light-gray-color;
+}

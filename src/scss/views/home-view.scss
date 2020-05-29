@@ -1,0 +1,175 @@
+// heading section
+
+#homeHeading {
+  @include pageCover(url(../assets/img/home-heading.jpg));
+  a {
+    @include nextSectionButton;
+  }
+}
+
+// about section
+#about {
+  @include flexCenter;
+  flex-direction: column;
+  margin: 5rem 10rem;
+  margin-top: 0;
+
+  .logo {
+    height: 32rem;
+    @media (max-width: $breakpoint-medium) {
+      height: 24rem;
+    }
+    img {
+      @include imgFit;
+    }
+  }
+  p {
+    font-style: italic;
+    text-align: center;
+  }
+  @media (max-width: $breakpoint-medium) {
+    margin: $mp-medium;
+  }
+  @media (max-width: $breakpoint-small) {
+    margin: $mp-small;
+  }
+}
+
+#photoLine {
+  @include pageCover(url(../assets/img/home-1.jpg));
+}
+
+// links section
+
+#links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 10rem;
+  & > div {
+    display: flex;
+    margin: 3.2rem;
+    .imgBox {
+      min-width: 40rem;
+      height: auto;
+      img {
+        @include imgFit;
+      }
+      @media (max-width: $breakpoint-large) {
+        min-width: 30rem;
+      }
+      @media (max-width: $breakpoint-small) {
+        min-width: 20rem;
+      }
+    }
+    & > div:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 3.2rem;
+      a {
+        align-self: flex-start;
+        color: $secondary-color;
+        cursor: pointer;
+        &:hover {
+          color: $secondary-color-op-6;
+          transition: 0.2s;
+        }
+      }
+      @media (max-width: $breakpoint-medium) {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+  & > div:last-child {
+    flex-direction: row-reverse;
+    & > div:last-child {
+      margin-left: 0;
+      margin-right: 3.2rem;
+      @media (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+    }
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: $breakpoint-medium) {
+    margin: $mp-medium;
+  }
+  @media (max-width: $breakpoint-small) {
+    margin: $mp-small;
+  }
+}
+
+// reviews section
+
+#reviews {
+  border-top: $border-style $secondary-color-op-6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 10rem;
+  button {
+    background-color: transparent;
+    border: none;
+    width: 4rem;
+    height: 5rem;
+    @include flexCenter;
+    &:hover {
+      background-color: $secondary-color-op-6;
+      transition: 0.2s;
+      svg {
+        fill: $main-color;
+      }
+    }
+    &:focus {
+      outline-color: $secondary-color-op-6;
+    }
+    @media (max-width: $breakpoint-medium) {
+      width: 2rem;
+      height: 2.5rem;
+    }
+  }
+  button:first-child {
+    margin-right: 3.2rem;
+  }
+  button:last-child {
+    margin-left: 3.2rem;
+  }
+  & > div {
+    display: flex;
+    animation-duration: 1s;
+    animation-name: slideTitleFromTop;
+    .imgBox {
+      max-width: 32rem;
+      max-height: 20rem;
+      border-radius: 10px;
+      img {
+        @include imgFit;
+        overflow: hidden;
+      }
+    }
+    div:last-child {
+      margin-left: 3.2rem;
+      max-width: 32rem;
+      @media (max-width: $breakpoint-medium) {
+        margin-left: 0;
+        max-width: 32rem;
+      }
+    }
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: $breakpoint-medium) {
+    padding: $mp-medium;
+    min-height: 32rem;
+  }
+  @media (max-width: $breakpoint-small) {
+    padding: $mp-small;
+  }
+}

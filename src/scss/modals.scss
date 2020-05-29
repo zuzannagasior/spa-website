@@ -1,0 +1,123 @@
+#infoModal {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .modalWrapper {
+        position: relative;
+        background-color: $main-color;
+        width: 60%;
+        min-width: 700px;
+        max-width: 1000px;
+        margin: 10% auto;
+        border: $border-style $secondary-color-op-6;
+        display: flex;
+        animation-duration: 0.5s;
+        animation-name: slideModalFromTop;
+
+        @media (max-width: $breakpoint-large) {
+            flex-direction: column;
+            width: 80%;
+        }
+        @media (max-width: $breakpoint-medium) {
+            width: 90%;
+            min-width: 100px;
+        }
+
+        .logo {
+            //min-height: 30rem;
+            flex-basis: 40rem;
+            img {
+                @include imgFit;
+            }
+            @media (max-width: $breakpoint-large) {
+                display: none;
+            }
+        }
+        .modalContentWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            flex-basis: 100%;
+        }
+        .modalContent {
+            width: 100%;
+            flex-grow: 1;
+            padding: 1.6rem 3.2rem;
+            padding-top: 0;
+            hr {
+                border: $border-style $secondary-color-op-6;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+            .login {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                input {
+                    width: 32rem;
+                    margin-bottom: 1.6rem;
+                    @media (max-width: $breakpoint-large) {
+                        width: 80%;
+                    }
+                    @media (max-width: $breakpoint-small) {
+                        width: 100%;
+                    }
+                }
+                h3 {
+                    margin-bottom: 3.2rem;
+                }
+                button {
+                    width: 32rem;
+                    margin-bottom: auto;
+                    @media (max-width: $breakpoint-large) {
+                        width: 80%;
+                    }
+                    @media (max-width: $breakpoint-small) {
+                        width: 100%;
+                    }
+                }
+                p {
+                    margin-top: 3.2rem;
+                }
+
+                a {
+                    cursor: pointer;
+                }
+            }
+        }
+        .modalNav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.6rem 3.2rem;
+            padding-bottom: 3.2rem;
+            button:first-child {
+                margin-right: 0.8rem;
+                @media (max-width: $breakpoint-small) {
+                    margin-right: 0;
+                    margin-bottom: 0.8rem;
+                }
+            }
+            @media (max-width: $breakpoint-small) {
+                flex-direction: column;
+            }
+        }
+        .close {
+            width: 4rem;
+            height: 4rem;
+            &:focus {
+                outline-color: $secondary-color-op-6;
+            }
+            svg {
+                height: 80%;
+                width: 80%;
+            }
+        }
+    }
+}

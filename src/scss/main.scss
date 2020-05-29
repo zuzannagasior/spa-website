@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import "./variables.scss";
+@import "./animations.scss";
+@import "./mixins.scss";
+@import "./components.scss";
+@import "./nav.scss";
+@import "./views/home-view.scss";
+@import "./views/rooms-view.scss";
+@import "./views/treatments-view.scss";
+@import "./views/bookings-view.scss";
+@import "./views/summary-view.scss";
+@import "./views/register-view.scss";
+@import "./views/error-view.scss";
+@import "./footer.scss";
+@import "./modals.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-main;
+  background: $main-color;
+  color: $dark-color;
+  font-size: 16px;
+  .modal-open {
+    overflow: hidden;
+  }
+}

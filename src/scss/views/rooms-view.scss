@@ -1,0 +1,120 @@
+// heading section
+
+#roomsHeading {
+  @include pageCover(url(../assets/img/rooms-heading.jpg));
+  p {
+    @include pageTitle;
+  }
+  a {
+    @include nextSectionButton;
+  }
+}
+
+//rooms list section
+
+#roomsList {
+  .roomsListIntro {
+    @include flexCenter;
+    flex-direction: column;
+    padding: 5rem 10rem;
+    @media (max-width: $breakpoint-medium) {
+      padding: $mp-medium;
+    }
+    @media (max-width: $breakpoint-small) {
+      padding: $mp-small;
+    }
+    h1 {
+      font-family: $font-secondary;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+// rooms list container
+
+#roomsListCont {
+  @include flexCenter;
+  flex-direction: column;
+  margin: 5rem 10rem;
+
+  // room list item box
+  .roomItemBox {
+    height: 32rem;
+    width: 100%;
+    border: $border-style $secondary-color-op-6;
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: stretch;
+    @media (max-width: $breakpoint-large) {
+      flex-direction: column;
+      align-items: center;
+      flex-basis: 100%;
+    }
+    .imgBox {
+      min-width: 40rem;
+      height: auto;
+      background-color: $secondary-color;
+      img {
+        @include imgFit;
+      }
+      @media (max-width: $breakpoint-medium) {
+        height: 24rem;
+        min-width: 100%;
+      }
+      @media (max-width: $breakpoint-large) {
+        width: 100%;
+        height: 32rem;
+      }
+      @media (min-width: $breakpoint-large) {
+        width: 40rem;
+      }
+    }
+
+    // room list item content
+    .roomItemCont {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1.6rem 1.6rem;
+      h2 {
+        font-family: $font-secondary;
+        // font-weight: bold;
+        font-style: italic;
+      }
+      p {
+        flex-grow: 1;
+      }
+      span {
+        margin-right: 1rem;
+        svg {
+          transform: translateY(0.4rem);
+        }
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          font-size: 2.4rem;
+          margin-left: 1.6rem;
+          font-style: italic;
+          @media (max-width: $breakpoint-small) {
+            margin-bottom: 0.8rem;
+          }
+        }
+        @media (max-width: $breakpoint-small) {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-medium) {
+    margin: $mp-medium;
+  }
+  @media (max-width: $breakpoint-small) {
+    margin: $mp-small;
+  }
+}

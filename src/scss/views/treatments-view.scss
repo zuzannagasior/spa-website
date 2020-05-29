@@ -1,0 +1,161 @@
+// heading section
+
+#treatmentHeading {
+  @include pageCover(url(../assets/img/treatment-heading.jpg));
+  p {
+    @include pageTitle;
+  }
+  a {
+    @include nextSectionButton;
+  }
+}
+
+// treatments list section
+
+#treatmentsList {
+  .treatmentsListIntro {
+    @include flexCenter;
+    flex-direction: column;
+    padding: 5rem 10rem;
+    @media (max-width: $breakpoint-medium) {
+      padding: $mp-medium;
+    }
+    @media (max-width: $breakpoint-small) {
+      padding: $mp-small;
+    }
+    h1 {
+      font-family: $font-secondary;
+      text-transform: uppercase;
+    }
+    p {
+      text-align: center;
+    }
+  }
+}
+
+// filter section
+
+.filters {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+
+  select {
+    width: 18rem;
+    background-color: transparent;
+    border: $border-style $secondary-color-op-6;
+    &:focus {
+      outline: none;
+      background-color: $main-color;
+      border-color: $secondary-color-op-6;
+      box-shadow: inset 0 1px 1px $secondary-color-op-6, 0 0 8px $secondary-color-op-6;
+    }
+    option {
+      background-color: $main-color;
+    }
+  }
+}
+
+// treatments list container
+
+#treatmentsListCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 5rem 10rem;
+
+  // treatment list item box
+  .treatmentItemBox {
+    max-width: 30rem;
+    border: $border-style $secondary-color-op-6;
+    margin: 0 0.8rem 1.6rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    animation-duration: 0.5s;
+    animation-name: loadTreatmentItem;
+    .imgBox {
+      width: 100%;
+      height: 24rem;
+      position: relative;
+      button {
+        display: none;
+        position: absolute;
+        bottom: 2.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      img {
+        @include imgFit;
+        z-index: -1;
+        position: absolute;
+      }
+    }
+    .showHover {
+      background-color: $main-color-op-6;
+      transition: 0.2s;
+    }
+    .showHover button {
+      display: block;
+      transition: 0.2s;
+    }
+
+    // treatment list item content
+    .treatmentItemCont {
+      display: flex;
+      flex-direction: column;
+      padding: 1.6rem 1.6rem;
+      h2 {
+        font-family: $font-secondary;
+        // font-weight: bold;
+        font-style: italic;
+      }
+      p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .showMore {
+        text-overflow: initial;
+        overflow: visible;
+        white-space: normal;
+      }
+      span {
+        margin-right: 1rem;
+        svg {
+          transform: translateY(0.4rem);
+        }
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          font-size: 2.4rem;
+          margin-left: 1.6rem;
+          font-style: italic;
+        }
+        button {
+          background-color: transparent;
+          color: $secondary-color;
+          border: none;
+          svg {
+            transform: translateY(0.4rem);
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-medium) {
+    margin: $mp-medium;
+  }
+  @media (max-width: $breakpoint-small) {
+    margin: $mp-small;
+  }
+}

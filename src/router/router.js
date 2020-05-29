@@ -47,6 +47,7 @@ export class Router {
             //obsługa nieistniejącej ścieżki
             console.log('fjdh');
             const html = errorPage();
+            document.title = 'Error! Nie ma takiej podstrony! | Hotel SPA i RELAX Lubienice';
             this.outlet.empty().append(html);
         }
     }

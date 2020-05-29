@@ -1,0 +1,153 @@
+// cast item list box
+
+#cartListBox {
+  min-height: 100vh;
+  margin: 0 20rem;
+
+  header {
+    color: $secondary-color;
+    border-bottom: $border-style $secondary-color-op-6;
+    padding-top: 12rem;
+    margin-bottom: 4rem;
+  }
+  h3 {
+    margin-left: 1.6rem;
+  }
+  p {
+    padding: 1.6rem;
+    border-bottom: $border-style $secondary-color-op-6;
+  }
+
+  // single cart item box
+  .cartItemBox {
+    border-bottom: $border-style $secondary-color-op-6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem;
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    div {
+      height: 6.4rem;
+      display: flex;
+      align-items: center;
+    }
+    button {
+      width: 3.2rem;
+      height: 3.2rem;
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      background-color: transparent;
+      border: none;
+      &.delete {
+        margin-right: 1.6rem;
+      }
+      &:hover {
+        color: $secondary-color;
+        font-weight: bold;
+      }
+      &:focus {
+        outline-color: $secondary-color-op-6;
+      }
+      &:disabled {
+        color: $light-gray-color;
+        font-weight: normal;
+      }
+      &:last-child {
+        margin-right: 3.2rem;
+      }
+    }
+
+    // first section of box
+    .first {
+      margin-right: 3.2rem;
+      .imgBox {
+        height: 6.4rem;
+        width: 6.4rem;
+        margin-right: 3.2rem;
+        img {
+          @include imgFit;
+        }
+      }
+      @media (max-width: $breakpoint-medium) {
+        margin-right: 0;
+      }
+    }
+
+    // second section of box
+    .second {
+      margin-right: 4.8rem;
+      .amount {
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+      }
+      .price {
+        min-width: 10rem;
+        text-align: right;
+      }
+      @media (max-width: $breakpoint-medium) {
+        align-self: center;
+      }
+    }
+    @media (max-width: $breakpoint-medium) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  // summary section
+  .summary {
+    margin: 1.6rem 6.4rem 1.6rem 0;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    span {
+      margin-bottom: 3.2rem;
+    }
+    @media (max-width: $breakpoint-medium) {
+      margin-right: 0;
+    }
+  }
+  @media (max-width: $breakpoint-large) {
+    margin: 0 5rem;
+  }
+  @media (max-width: $breakpoint-small) {
+    margin: 0 2rem;
+  }
+}
+
+// date picker section
+
+.datePickerWrap {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  & > div {
+    display: flex;
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+  & .datePickerCont {
+    &:first-child {
+      margin-right: 3.2rem;
+      @media (max-width: $breakpoint-medium) {
+        margin-bottom: 1.6rem;
+        margin-right: auto;
+      }
+    }
+
+    & input {
+      margin-right: 0.8rem;
+    }
+    @media (max-width: $breakpoint-medium) {
+      margin-right: auto;
+    }
+  }
+  .invalidMsg {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+  }
+}

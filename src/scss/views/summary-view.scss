@@ -1,0 +1,103 @@
+// summary box
+
+#summaryBox {
+    min-height: 100vh;
+    margin: 0 20rem;
+    margin-bottom: 1.6rem;
+
+    header {
+        color: $secondary-color;
+        border-bottom: $border-style $secondary-color-op-6;
+        padding-top: 12rem;
+        margin-bottom: 4rem;
+    }
+
+    .btnsSection {
+        display: flex;
+        justify-content: center;
+        margin: 3.2rem 1.6rem;
+        button:first-child {
+            margin-right: 1.6rem;
+            @media (max-width: $breakpoint-small) {
+                margin-right: 0;
+            }
+        }
+        @media (max-width: $breakpoint-small) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        button:last-child {
+            @media (max-width: $breakpoint-small) {
+                margin-bottom: 1.6rem;
+            }
+        }
+    }
+
+    .summarySection {
+        display: flex;
+        border-bottom: $border-style $secondary-color-op-6;
+
+        & > div:first-child {
+            width: 20rem;
+            border-right: $border-style $secondary-color-op-6;
+            padding: 1.6rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-transform: uppercase;
+            @media (max-width: $breakpoint-medium) {
+                width: 100%;
+                border-right: 0;
+                justify-content: flex-start;
+            }
+        }
+        & > div:last-child {
+            padding: 1.6rem;
+            width: 100%;
+            max-width: 64rem;
+            ul {
+                list-style-type: none;
+                margin-bottom: 0;
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 1.6rem;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    & > div {
+                        display: flex;
+                        align-items: center;
+                        @media (max-width: $breakpoint-medium) {
+                            margin-bottom: 0.8rem;
+                        }
+                        & > * {
+                            margin-right: 1.6rem;
+                        }
+                    }
+                    .imgBox {
+                        width: 8rem;
+                        height: auto;
+                        img {
+                            @include imgFit;
+                        }
+                    }
+                    @media (max-width: $breakpoint-medium) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+        @media (max-width: $breakpoint-medium) {
+            flex-direction: column;
+        }
+    }
+    @media (max-width: $breakpoint-large) {
+        margin: 0 5rem;
+    }
+    @media (max-width: $breakpoint-small) {
+        margin: 0 2rem;
+    }
+}

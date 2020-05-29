@@ -1,0 +1,165 @@
+// button
+
+.customButton {
+  height: 4rem;
+  min-width: 18rem;
+  @include flexCenter;
+  padding: 0 0.5rem;
+  background-color: transparent;
+  border: $border-style $secondary-color-op-6;
+  &:hover {
+    background-color: $secondary-color-op-6;
+    color: $main-color;
+    transition: 0.2s;
+  }
+  &:focus {
+    outline: 2px solid rgba(73, 89, 83, 0.4);
+    transition: 0.2s;
+  }
+
+  // green button
+  &.colored {
+    background-color: $secondary-color-op-6;
+    color: $main-color;
+    &:hover {
+      background-color: transparent;
+      color: $dark-color;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $secondary-color-op-6;
+      color: $main-color;
+    }
+  }
+
+  // secondary button (backward)
+  &.secondary {
+    &:hover {
+      background-color: $main-color;
+      color: $dark-color;
+    }
+    &:focus {
+      outline: 2px solid rgba(73, 89, 83, 0.4);
+    }
+  }
+}
+
+//input
+
+.customInput {
+  background-color: transparent;
+  border: 1px solid $dark-color;
+  width: 15rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 1px 1px $secondary-color-op-6, 0 0 8px $secondary-color-op-6;
+    transition: 0.2s;
+  }
+}
+
+//date picker (custom style)
+
+.bootstrap-datetimepicker-widget {
+  background-color: $main-color;
+  &.dropdown-menu {
+    &.bottom {
+      &:before {
+        border-bottom-color: $main-color;
+      }
+
+      &:after {
+        border-bottom-color: $main-color;
+      }
+    }
+
+    &.top {
+      &:before {
+        border-top-color: $main-color;
+      }
+
+      &:after {
+        border-top-color: $main-color;
+      }
+    }
+  }
+
+  table {
+    & thead tr:first-child th {
+      &:hover {
+        background: $secondary-color;
+        color: $main-color;
+      }
+    }
+
+    & td {
+      &.today {
+        &:before {
+          border-bottom-color: $secondary-color;
+          border-top-color: $secondary-color;
+        }
+      }
+
+      &.active,
+      &.active:hover {
+        background-color: $secondary-color;
+        color: $main-color;
+      }
+      &.active.today:before {
+        border-bottom-color: $main-color;
+      }
+
+      span {
+        &.active {
+          background-color: $secondary-color;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+.input-group.date {
+  & .input-group-addon {
+    background-color: transparent;
+    border: none;
+    color: $dark-color;
+    border-radius: 4px;
+    &:hover {
+      background-color: $secondary-color;
+      color: $main-color;
+      transition: 0.2s;
+    }
+  }
+}
+
+// messeges
+
+// messeges
+
+.invalidMsg {
+  color: red;
+  font-size: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.validMsg {
+  background-color: rgb(58, 143, 58);
+  margin: auto;
+  width: 60%;
+  padding: 1.6rem 0.8rem;
+  color: $main-color;
+  font-size: 1.2rem;
+  text-align: center;
+  p {
+    margin: auto;
+  }
+  @media (max-width: $breakpoint-large) {
+    width: 80%;
+  }
+  @media (max-width: $breakpoint-small) {
+    margin: 0;
+    width: 100%;
+  }
+}
