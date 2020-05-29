@@ -12,6 +12,7 @@ import { treatmentItem } from './treatment-item';
 const getTreatmentsData = async (area = "all") => {
     const areaParameter = area !== "all" ? `?area=${area}` : "";
 
+    console.log(API_URL, 'API_URL');
     let response = await fetch(`${API_URL}/treatments${areaParameter}`);
     let data = await response.json()
     return data;
