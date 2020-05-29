@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:app": "parcel ./index.html --open"
+    "start:app": "parcel ./index.html --open",
+    "build:app": "parcel build index.html --out-dir docs --public-url https://zuzannagasior.github.io/spa-website/"
   },
   "keywords": [],
   "author": "",
