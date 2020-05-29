@@ -1,7 +1,4 @@
 import $ from 'jquery';
-import {
-    API_URL
-} from '../../config/httpConfig';
 import 'babel-polyfill';
 import {
     headingSection
@@ -10,10 +7,9 @@ import { treatmentsList } from './treatments-list';
 import { treatmentItem } from './treatment-item';
 
 const getTreatmentsData = async (area = "all") => {
-    const areaParameter = area !== "all" ? `?area=${area}` : "";
+    const areaParameter = area !== "all" ? area : "";
 
-    console.log(API_URL, 'API_URL');
-    let response = await fetch(`${API_URL}/treatments${areaParameter}`);
+    let response = await fetch(`/treatments/${areaParameter}`);
     let data = await response.json()
     return data;
 }

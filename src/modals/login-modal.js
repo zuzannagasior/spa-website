@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { API_URL } from '../config/httpConfig';
 import { closeIcon } from '../assets/icons/closeIcon';
 import spaLogo from '../assets/img/sparelaxlogo.png';
 import { confirmModal } from './confirm-booking-modal';
@@ -10,7 +9,7 @@ import {
 const checkUser = async (e, p) => {
     let invalidUser = true;
 
-    await fetch(`${API_URL}/users?email=${e}`)
+    await fetch(`/users/${e}`)
         .then(response => response.json())
         .then(data => {
 
@@ -92,7 +91,7 @@ export const loginModal = (afterRegister = false) => {
                 treatments: treatments
             };
         
-            fetch(`${API_URL}/bookings`, {
+            fetch(`/bookings`, {
             method: 'POST',
             body: JSON.stringify({...newBooking}),
             headers: {

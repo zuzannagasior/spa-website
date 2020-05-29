@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { API_URL } from '../../config/httpConfig';
 import { loginModal } from '../../modals/login-modal'
 
 const  checkPasswordStrength = (password) => {
@@ -27,7 +26,7 @@ const  checkPasswordStrength = (password) => {
 const validateUser = async (email) => {
     let invalidUser = false;
 
-    await fetch(`${API_URL}/users?email=${email}`)
+    await fetch(`/users?email=${email}`)
         .then(response => response.json())
         .then(data => {
 
@@ -48,7 +47,7 @@ const onFormSubmit = (e) => {
         email: registerForm.find('#userEmail').val()
     };
 
-    fetch(`${API_URL}/users`, {
+    fetch(`/users`, {
     method: 'POST',
     body: JSON.stringify({...newUser}),
     headers: {
