@@ -1,7 +1,7 @@
 // heading section
 
 #roomsHeading {
-  @include pageCover(url(../assets/img/rooms-heading.jpg));
+  @include pageCover(url(../assets/img/rooms-heading-min.jpg));
   p {
     @include pageTitle;
   }

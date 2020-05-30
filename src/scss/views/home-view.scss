@@ -1,7 +1,7 @@
 // heading section
 
 #homeHeading {
-  @include pageCover(url(../assets/img/home-heading.jpg));
+  @include pageCover(url(../assets/img/home-heading-min.jpg));
   a {
     @include nextSectionButton;
   }
@@ -35,7 +35,7 @@
 }
 
 #photoLine {
-  @include pageCover(url(../assets/img/home-1.jpg));
+  @include pageCover(url(../assets/img/home-1-min.jpg));
 }
 
 // links section

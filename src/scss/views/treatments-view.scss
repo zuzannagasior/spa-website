@@ -1,7 +1,7 @@
 // heading section
 
 #treatmentHeading {
-  @include pageCover(url(../assets/img/treatment-heading.jpg));
+  @include pageCover(url(../assets/img/treatment-heading-min.jpg));
   p {
     @include pageTitle;
   }

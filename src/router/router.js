@@ -32,6 +32,10 @@ export class Router {
     }
 
     async navigate(path, data = {},) {
+        // redirect to bookings
+        if (['/summary', '/register'].includes(path) && Object.keys(data).length === 0) {
+            path = '/bookings';
+        }
         history.pushState(data, '', path);
 
         if (this.has(path)) {
