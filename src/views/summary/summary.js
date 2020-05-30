@@ -88,7 +88,7 @@ export const summary = () => {
                             </div>`);
 
     btnsSection.find('button:first-child').on('click', () => {
-        history.back();
+        btnsSection.find('button:first-child').trigger('routechange', { path: '/bookings' });
     });
     btnsSection.find('button:last-child').on('click', () => {
         $(document.body).append(loginModal());

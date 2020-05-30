@@ -9,7 +9,7 @@ import { treatmentItem } from './treatment-item';
 const getTreatmentsData = async (area = "all") => {
     const areaParameter = area !== "all" ? area : "";
 
-    let response = await fetch(`/treatments/${areaParameter}`);
+    let response = await fetch(`/treatmentsdb/${areaParameter}`);
     let data = await response.json()
     return data;
 }

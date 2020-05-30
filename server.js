@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require('mongoose');
+const path = require("path")
 
 require('dotenv').config();
 
@@ -24,12 +25,16 @@ const treatmentsRouter = require('./routes/treatments');
 const usersRouter = require('./routes/users');
 const bookingsRouter = require('./routes/bookings');
 
-app.use('/rooms', roomsRouter);
-app.use('/treatments', treatmentsRouter);
+app.use('/roomsdb', roomsRouter);
+app.use('/treatmentsdb', treatmentsRouter);
 app.use('/users', usersRouter);
 app.use('/bookings', bookingsRouter);
 
 app.use(express.static(__dirname + '/dist'))
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
 
 const port = process.env.PORT || 5000;
 

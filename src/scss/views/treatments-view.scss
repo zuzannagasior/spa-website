@@ -106,9 +106,8 @@
       flex-direction: column;
       padding: 1.6rem 1.6rem;
       h2 {
-        font-family: $font-secondary;
-        // font-weight: bold;
-        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
       p {
         text-overflow: ellipsis;

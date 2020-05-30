@@ -24,7 +24,8 @@
       padding: $mp-small;
     }
     h1 {
-      font-family: $font-secondary;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     p {
       text-align: center;
@@ -80,8 +81,6 @@
       padding: 1.6rem 1.6rem;
       h2 {
         font-family: $font-secondary;
-        // font-weight: bold;
-        font-style: italic;
       }
       p {
         flex-grow: 1;

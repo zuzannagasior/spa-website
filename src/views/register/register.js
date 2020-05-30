@@ -110,7 +110,6 @@ export const register = () => {
             const emailValue = e.target.value;
             const emailValid = regExp.test(emailValue.toLowerCase());
 
-            // const hasMsg = registerForm.find('#userEmail').next().hasClass("invalidMsg");
             if (!emailValid) {
                 const invalidMsg = $('<i>Niewłaściwy adres email.</i>');
                 registerForm.find('#userEmail').next().html(invalidMsg);
@@ -123,13 +122,11 @@ export const register = () => {
         // confirm password
 
         if ((e.target.id === 'confirmPassword' && !!$('#userPassword').val().trim()) || e.target.id === 'userPassword' && !!$('#confirmPassword').val().trim()) {
-            //&& !!$('#userPassword').val().trim()
             const password = $('#userPassword').val();
             const confirmPassValue = $('#confirmPassword').val();
 
             const passwordValid = password === confirmPassValue;
 
-            //const hasMsg = registerForm.find('#confirmPassword').next().hasClass("invalidMsg");
             if (!passwordValid) {
                 const invalidMsg = $('<i>Podane hasła różnią się.</i>');
 
@@ -139,10 +136,6 @@ export const register = () => {
                 registerForm.find('#confirmPassword').next().empty();
             }
         }
-
-        // if (registerForm.find('.invalidMsg').length > 0) {
-        //     formInvalid = true;
-        // }
 
         registerForm.find('button').attr('disabled', formInvalid);
 

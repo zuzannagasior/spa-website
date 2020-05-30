@@ -4,7 +4,7 @@ import { roomsList } from './rooms-list';
 import { headingSection } from './heading-section';
 
 const getRoomsData = async () => {
-    let response = await fetch(`/rooms`);
+    let response = await fetch(`/roomsdb`);
     let data = await response.json()
     return data;
 }

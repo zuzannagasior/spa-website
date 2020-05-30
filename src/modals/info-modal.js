@@ -42,7 +42,11 @@ export const infoModal = (data) => {
         $("body").removeClass("modal-open");
     })
     div.find('.modalNav button:first-child').on('click', () => {
-        div.find('.modalNav button:first-child').trigger('routechange', { path: '/treatments' });
+        if (treatmentPath) {
+            div.find('.modalNav button:first-child').trigger('routechange', { path: '/rooms' });
+        } else if (roomsPath) {
+            div.find('.modalNav button:first-child').trigger('routechange', { path: '/treatments' });
+        }
         $(document.body).find('#infoModal').remove();
         $("body").removeClass("modal-open");
     })

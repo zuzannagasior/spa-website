@@ -24,7 +24,6 @@
     }
   }
   p {
-    font-style: italic;
     text-align: center;
   }
   @media (max-width: $breakpoint-medium) {
@@ -49,6 +48,10 @@
   & > div {
     display: flex;
     margin: 3.2rem;
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
     .imgBox {
       min-width: 40rem;
       height: auto;

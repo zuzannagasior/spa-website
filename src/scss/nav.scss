@@ -7,10 +7,11 @@ nav {
     z-index: 9998;
     .logo {
         font-size: 2.4rem;
-        font-weight: bold;
         padding: 1.5rem 0.5rem;
         flex-grow: 1;
         font-family: $font-secondary;
+        text-transform: uppercase;
+        letter-spacing: 2px;
         a {
             cursor: pointer;
             color: inherit;
