@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { closeIcon } from '../../assets/icons/closeIcon';
 import {
     Cart
 } from '../../cart/cart';
