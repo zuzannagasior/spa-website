@@ -38,7 +38,7 @@ export const treatmentItem = (data) => {
                                     <button class="customButton addToCartBtn">Dodaj do koszyka</button>
                                 </div>
                                 <div class="treatmentItemCont">
-                                    <h2>${data.name}</h2>
+                                    <h3>${data.name}</h3>
                                     <p><span>${timeIcon} ${data.time} min</span>
                                     <span>${personIcon} ${areas.get(data.area)}</span></p>
                                     <p class="treatmentInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
