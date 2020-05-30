@@ -1,71 +1,54 @@
-# IT SPA
+# SPA IT website with shoping cart
 
-Projekt polega na napisaniu aplikacji Single Page Application dla ośrodka SPA dedykowanego programistom.
+Single page application SPA IT website is one of my final projects of studies in Kozminski University.
 
-Aplikacja powinna umożliwiać: 
+See live demo --> https://spa-demo-zg.herokuapp.com/
 
-- Przeglądanie dostępnych zabiegów
-- Dodawanie wybranych zabiegów do koszyka
-- Wybór daty przyjazdu i wyjazdu oraz pokoju  
-- Rejestrację użytkownika (opcjonalnie)
-- Logowanie użytkownika (opcjonalnie)
-- Podsumowanie składanego zamówienia
+## Technologies
+- HTML
+- SCSS
+- jQuery
+- Node.js
+- Express.js
+- MongoDB, mongoose
+- Bootstrap
+- Parcel bundler
+- Moment.js
 
-## Booking
+## Features
 
-Stwórz komponent koszyka, który wyświetla podsumowanie zamówienia.
-Koszyk powinien też umożliwiać nanoszenie poprawek do zamówienia.
-Użytkownik nie może wybrać daty przyjazdu wcześniejszej niż bieżąca.
-Wybrana data wyjazdu nie może być dalsza niż rok od daty przyjazdu.
+- Browsing treatments and rooms
+- Adding treatments and rooms to the shopping cart
+- Choosing duration of stay in hotel
+- User registration and login with validation
+- Booking confirmation
 
-## Rejestracja
+## Installation
 
-Stwórz komponent rejestracji użytkownika z opcjonalnym miernikiem siły hasła.
-Rejestracja polega na zapisaniu danych użytkownika (e-mail i hasła) w pliku `database.json`.
-Nie powinna być możliwa rejestracja użytkownika o identycznym adresie e-mail.
+1. Clone this repo.
+```shell
+$ git clone https://github.com/zuzannagasior/spa-website.git
+```
 
-## Logowanie
+2. Go into the repo.
+```shell
+$ cd spa-website
+```
 
-Stwórz komponent logowania użytkownika, który opcjonalnie będzie wyświetlał avatar użytkownika.
-Logowanie polega na porównaniu podanych przez użytkownika danych (e-mail i hasła) z tymi w pliku `database.json`.
+3. Install all dependencies.
+```shell
+$ npm install
+```
 
-## Pokoje
+4. Create .env file in main folder and add LOCAL_URI to add local MongoDB database. Add two collections: rooms and treatment. Complete them with documents that you can find in db.json file.
 
-Bazę przykładowych pokoi w ośrodku IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące pokoje lub dodać swoje własne. 
+5. Build project.
+```shell
+$ npm run build:app
+```
 
-## Zabiegi 
-
-Bazę przykładowych zabiegów ośrodka IT SPA znajdziesz w pliku `database.json`.
-Możesz dowolnie zmienić istniejące zabiegi lub dodać swoje własne. 
-
-## Koszyk
-
-Stwórz komponent koszyka, który po najechaniu myszką będzie wyświetlał dodane pokoje i zabiegi.
-Koszyk musi przetrwać przeładowanie strony, dlatego spróbuj wykorzystać ciasteczka (Cookies).
-
-## Technologie
-
-- HTML, Bootstrap
-- CSS, Sass, LESS
-- JavaScript, jQuery
-- Node, Express
-
-Postaraj się korzystać z ECMAScript 6.
-
-Do interakcji z serwerem bazy danych wykorzystaj `fetch`.
-Jeśli lubisz eksperymenty, zainstaluj pakiet `axios`.
-
-## Ocena
-
-Zamieść gotowy projekt na swoim GitHubie.
-Postaraj się oddać projekt do końca maja 2020.
-
-## Przykłady
-
-Strony, którymi możesz się inspirować: 
-
-- afrodyta-spa.pl
-- bukowypark.pl
-- hotelczarnypotok.pl
-- hotelniemcza.pl
+6. Run server
+```shell
+$ npm start:prod
+```
+7. Run this app in browser.
