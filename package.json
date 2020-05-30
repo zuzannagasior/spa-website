@@ -6,8 +6,7 @@
   "scripts": {
     "start:prod": "node server.js",
     "start:app": "parcel ./index.html --open",
-    "build:app": "parcel build index.html",
-    "heroku-prebuild": "npm run build:app"
+    "build:app": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
