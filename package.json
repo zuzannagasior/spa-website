@@ -24,7 +24,7 @@
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "moment": "^2.26.0",
-    "moment-timezone": "^0.4.1",
+    "moment-timezone": "^0.5.35",
     "mongoose": "^5.9.16",
     "parcel-plugin-clean-dist": "0.0.6"
   }
